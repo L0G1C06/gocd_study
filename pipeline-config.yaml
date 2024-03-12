@@ -1,0 +1,15 @@
+format_version: 9
+pipelines:
+  go-api:
+    group: defaultGroup
+    materials:
+      mygit:
+        git: https://github.com/L0G1C06/gocd_study
+        branch: main
+    stages:
+      - build:
+          jobs:
+            build:
+              tasks:
+                - exec:
+                    command: go test

@@ -128,3 +128,463 @@ app/controllers/api_v1/version_infos_controller.rb:23:in `update_server'
 2024-03-12 22:26:29,486 INFO  [qtp1417842416-27] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@113c0445[displayName=anonymous,username=anonymous] is completed
 2024-03-12 22:26:53,550 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]] at location [/go] asked for a new cookie, assigned [f3361b47-7343-464c-94dc-08d37499b315]
 2024-03-12 22:26:53,571 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]] at location [/go] asked for a new cookie, assigned [ff85e23f-dee3-493d-ba99-74a6a1d7ab65]
+2024-03-12 22:27:34,731 WARN  [ThreadPoolTaskScheduler-6] MaterialUpdateService:188 - [Material Update] Skipping update of material GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false} which has been in-progress since Tue Mar 12 22:27:04 GMT 2024
+2024-03-12 22:28:04,732 WARN  [ThreadPoolTaskScheduler-3] MaterialUpdateService:188 - [Material Update] Skipping update of material GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false} which has been in-progress since Tue Mar 12 22:27:04 GMT 2024
+2024-03-12 22:28:34,733 WARN  [ThreadPoolTaskScheduler-6] MaterialUpdateService:188 - [Material Update] Skipping update of material GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false} which has been in-progress since Tue Mar 12 22:27:04 GMT 2024
+2024-03-12 22:29:04,734 WARN  [ThreadPoolTaskScheduler-6] MaterialUpdateService:188 - [Material Update] Skipping update of material GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false} which has been in-progress since Tue Mar 12 22:27:04 GMT 2024
+2024-03-12 22:29:06,406 INFO  [qtp1417842416-28] PipelinePauseService:159 - [Pipeline Unpause] Pipeline [multi-agents] is unpaused by [com.thoughtworks.go.server.domain.Username@5b4b3f10[displayName=anonymous,username=anonymous]]
+2024-03-12 22:29:14,879 INFO  [ThreadPoolTaskScheduler-10] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline multi-agents with build cause [ModificationBuildCause: modified by L0G1C06 <justgithub70@gmail.com>]
+2024-03-12 22:29:14,910 INFO  [ThreadPoolTaskScheduler-10] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:29:14,915 INFO  [ThreadPoolTaskScheduler-10] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:29:14,924 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:29:15,222 WARN  [127@MessageListener for MaterialUpdateListener] MaterialDatabaseUpdater:127 - [Material Update] Modification check failed for material: URL: https://github.com/L0G1C06/gocd_study, Branch: main
+java.lang.RuntimeException: Working directory: pipelines/flyweight/70425873-32e6-4baa-8000-5c9858a77483
+STDERR: fatal: unable to access 'https://github.com/L0G1C06/gocd_study/': Failed to connect to github.com port 443: Operation timed out
+	at com.thoughtworks.go.domain.materials.git.GitCommand.gitLog(GitCommand.java:112)
+	at com.thoughtworks.go.domain.materials.git.GitCommand.modificationsSince(GitCommand.java:100)
+	at com.thoughtworks.go.config.materials.git.GitMaterial.modificationsSince(GitMaterial.java:135)
+	at com.thoughtworks.go.server.service.materials.GitPoller.modificationsSince(GitPoller.java:35)
+	at com.thoughtworks.go.server.service.materials.GitPoller.modificationsSince(GitPoller.java:26)
+	at com.thoughtworks.go.server.service.MaterialService.modificationsSince(MaterialService.java:128)
+	at com.thoughtworks.go.server.materials.ScmMaterialUpdater.insertLatestOrNewModifications(ScmMaterialUpdater.java:56)
+	at com.thoughtworks.go.server.materials.MaterialDatabaseUpdater.insertLatestOrNewModifications(MaterialDatabaseUpdater.java:157)
+	at com.thoughtworks.go.server.materials.MaterialDatabaseUpdater.updateMaterialWithNewRevisions(MaterialDatabaseUpdater.java:149)
+	at com.thoughtworks.go.server.materials.MaterialDatabaseUpdater$2.doInTransaction(MaterialDatabaseUpdater.java:108)
+	at com.thoughtworks.go.server.transaction.TransactionCallback.doWithExceptionHandling(TransactionCallback.java:23)
+	at com.thoughtworks.go.server.transaction.TransactionTemplate.lambda$executeWithExceptionHandling$2(TransactionTemplate.java:43)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at com.thoughtworks.go.server.transaction.TransactionTemplate.executeWithExceptionHandling(TransactionTemplate.java:40)
+	at com.thoughtworks.go.server.materials.MaterialDatabaseUpdater.updateMaterial(MaterialDatabaseUpdater.java:105)
+	at com.thoughtworks.go.server.materials.MaterialUpdateListener.onMessage(MaterialUpdateListener.java:64)
+	at com.thoughtworks.go.server.materials.MaterialUpdateListener.onMessage(MaterialUpdateListener.java:32)
+	at com.thoughtworks.go.server.messaging.activemq.JMSMessageListenerAdapter.runImpl(JMSMessageListenerAdapter.java:83)
+	at com.thoughtworks.go.server.messaging.activemq.JMSMessageListenerAdapter.run(JMSMessageListenerAdapter.java:63)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: git fetch failed for [https://github.com/L0G1C06/gocd_study]
+	at com.thoughtworks.go.domain.materials.git.GitCommand.fetch(GitCommand.java:369)
+	at com.thoughtworks.go.domain.materials.git.GitCommand.gitLog(GitCommand.java:109)
+	... 19 common frames omitted
+2024-03-12 22:29:23,770 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 1, 1, test-and-deploy, 1, run-go-test-runOnAll-1, 1]] to agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:29:23,783 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 1, 1, test-and-deploy, 1, run-go-test-runOnAll-2, 2]] to agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 22:29:43,879 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Preparing] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-2/2]]
+2024-03-12 22:29:43,883 INFO  [qtp1417842416-41] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Preparing] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-1/1]]
+2024-03-12 22:29:49,501 INFO  [qtp1417842416-29] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Building] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-1/1]]
+2024-03-12 22:29:49,525 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting result [Failed] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-1/1]]
+2024-03-12 22:29:49,540 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Completing] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-1/1]]
+2024-03-12 22:29:49,556 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status and result [Completed, Failed] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-1/1]]
+2024-03-12 22:29:49,942 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Building] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-2/2]]
+2024-03-12 22:29:50,478 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting result [Passed] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-2/2]]
+2024-03-12 22:29:50,493 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Completing] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-2/2]]
+2024-03-12 22:29:50,512 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status and result [Completed, Passed] for [Build [multi-agents/1/test-and-deploy/1/run-go-test-runOnAll-2/2]]
+2024-03-12 22:29:59,589 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 1, 1, test-and-deploy, 1, deploy-api-python-runOnAll-1, 3]] to agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:30:00,557 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 1, 1, test-and-deploy, 1, deploy-api-python-runOnAll-2, 4]] to agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 22:30:09,615 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Preparing] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-1/3]]
+2024-03-12 22:30:10,594 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Preparing] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-2/4]]
+2024-03-12 22:30:11,250 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Building] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-1/3]]
+2024-03-12 22:30:11,266 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting result [Failed] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-1/3]]
+2024-03-12 22:30:11,283 INFO  [qtp1417842416-43] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Completing] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-1/3]]
+2024-03-12 22:30:11,296 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status and result [Completed, Failed] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-1/3]]
+2024-03-12 22:30:11,505 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Building] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-2/4]]
+2024-03-12 22:30:11,521 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting result [Failed] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-2/4]]
+2024-03-12 22:30:11,539 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Completing] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-2/4]]
+2024-03-12 22:30:11,550 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status and result [Completed, Failed] for [Build [multi-agents/1/test-and-deploy/1/deploy-api-python-runOnAll-2/4]]
+2024-03-12 22:30:11,555 INFO  [qtp1417842416-28] Stage:234 - Stage is being completed by transition id: 24
+2024-03-12 22:30:35,704 INFO  [128@MessageListener for MaterialUpdateListener] ScmMaterialUpdater:60 - [Material Update] Found '1' modifications for material 'GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false}' with flyweight 'c9d10db48663b508409c377dbef7ba3ad91c28c3905370863387105865b36947' using working directory '/go-working-dir/pipelines/flyweight/70425873-32e6-4baa-8000-5c9858a77483'
+2024-03-12 22:30:44,954 INFO  [ThreadPoolTaskScheduler-2] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline multi-agents with build cause [ModificationBuildCause: modified by L0G1C06 <justgithub70@gmail.com>]
+2024-03-12 22:30:44,972 INFO  [ThreadPoolTaskScheduler-2] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:30:44,977 INFO  [ThreadPoolTaskScheduler-2] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:30:51,377 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 2, 2, test-and-deploy, 1, run-go-test-runOnAll-1, 5]] to agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:30:51,615 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 2, 2, test-and-deploy, 1, run-go-test-runOnAll-2, 6]] to agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 22:31:01,382 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Preparing] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-1/5]]
+2024-03-12 22:31:01,640 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Preparing] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-2/6]]
+2024-03-12 22:31:01,965 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Building] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-1/5]]
+2024-03-12 22:31:01,978 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting result [Failed] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-1/5]]
+2024-03-12 22:31:01,994 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Completing] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-1/5]]
+2024-03-12 22:31:02,002 INFO  [qtp1417842416-29] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Building] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-2/6]]
+2024-03-12 22:31:02,006 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status and result [Completed, Failed] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-1/5]]
+2024-03-12 22:31:02,297 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting result [Passed] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-2/6]]
+2024-03-12 22:31:02,312 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Completing] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-2/6]]
+2024-03-12 22:31:02,322 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status and result [Completed, Passed] for [Build [multi-agents/2/test-and-deploy/1/run-go-test-runOnAll-2/6]]
+2024-03-12 22:31:12,036 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 2, 2, test-and-deploy, 1, deploy-api-python-runOnAll-1, 7]] to agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:31:12,345 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 2, 2, test-and-deploy, 1, deploy-api-python-runOnAll-2, 8]] to agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 22:31:22,048 INFO  [qtp1417842416-29] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Preparing] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-1/7]]
+2024-03-12 22:31:22,360 INFO  [qtp1417842416-32] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Preparing] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-2/8]]
+2024-03-12 22:31:23,365 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Building] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-1/7]]
+2024-03-12 22:31:23,379 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting result [Failed] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-1/7]]
+2024-03-12 22:31:23,395 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Completing] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-1/7]]
+2024-03-12 22:31:23,408 INFO  [qtp1417842416-29] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status and result [Completed, Failed] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-1/7]]
+2024-03-12 22:31:23,437 INFO  [qtp1417842416-32] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Building] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-2/8]]
+2024-03-12 22:31:23,451 INFO  [qtp1417842416-29] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting result [Failed] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-2/8]]
+2024-03-12 22:31:23,464 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Completing] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-2/8]]
+2024-03-12 22:31:23,472 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status and result [Completed, Failed] for [Build [multi-agents/2/test-and-deploy/1/deploy-api-python-runOnAll-2/8]]
+2024-03-12 22:31:23,476 INFO  [qtp1417842416-31] Stage:234 - Stage is being completed by transition id: 48
+2024-03-12 22:32:42,534 ERROR [qtp1417842416-27] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:33:21,854 INFO  [qtp1417842416-32] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@e8a320b[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@6f9c61f1
+2024-03-12 22:33:21,855 INFO  [qtp1417842416-32] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@e8a320b[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:33:21,859 INFO  [qtp1417842416-32] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:33:21,873 INFO  [qtp1417842416-32] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:33:21,878 INFO  [qtp1417842416-32] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:33:21,879 INFO  [qtp1417842416-32] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:33:21,880 INFO  [qtp1417842416-32] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:33:21,880 INFO  [qtp1417842416-32] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@e8a320b[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:33:30,059 INFO  [qtp1417842416-32] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@62315d2e[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@29ad9ff1
+2024-03-12 22:33:30,060 INFO  [qtp1417842416-32] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@62315d2e[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:33:30,063 INFO  [qtp1417842416-32] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:33:30,073 INFO  [qtp1417842416-32] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:33:30,078 INFO  [qtp1417842416-32] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:33:30,079 INFO  [qtp1417842416-32] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:33:30,079 INFO  [qtp1417842416-32] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:33:30,080 INFO  [qtp1417842416-32] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@62315d2e[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:33:38,959 ERROR [qtp1417842416-29] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:33:51,040 INFO  [qtp1417842416-28] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@19cda806[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@247304a0
+2024-03-12 22:33:51,041 INFO  [qtp1417842416-28] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@19cda806[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:33:51,044 INFO  [qtp1417842416-28] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:33:51,055 INFO  [qtp1417842416-28] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:33:51,058 INFO  [qtp1417842416-28] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:33:51,060 INFO  [qtp1417842416-28] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:33:51,060 INFO  [qtp1417842416-28] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:33:51,061 INFO  [qtp1417842416-28] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@19cda806[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:34:04,321 INFO  [qtp1417842416-27] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@210f1de1[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@51c1a71
+2024-03-12 22:34:04,322 INFO  [qtp1417842416-27] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@210f1de1[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:34:04,325 INFO  [qtp1417842416-27] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:34:04,341 INFO  [qtp1417842416-27] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:34:04,351 INFO  [qtp1417842416-27] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:34:04,352 INFO  [qtp1417842416-27] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:34:04,353 INFO  [qtp1417842416-27] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:34:04,353 INFO  [qtp1417842416-27] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@210f1de1[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:34:08,115 INFO  [qtp1417842416-32] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'multi-agents' requested by anonymous
+2024-03-12 22:34:08,118 INFO  [qtp1417842416-32] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'multi-agents' accepted for user anonymous
+2024-03-12 22:34:08,121 INFO  [qtp1417842416-32] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'multi-agents' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@1abeee6[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 22:34:08 GMT 2024]'
+2024-03-12 22:34:09,042 INFO  [ThreadPoolTaskScheduler-6] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline multi-agents with build cause [ManualForcedBuildCause: Forced by anonymous]
+2024-03-12 22:34:09,052 INFO  [ThreadPoolTaskScheduler-6] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:34:09,055 INFO  [ThreadPoolTaskScheduler-6] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:34:13,597 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 3, 3, test-and-deploy, 1, run-go-test-runOnAll-1, 9]] to agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:34:13,646 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 3, 3, test-and-deploy, 1, deploy-api-python-runOnAll-1, 10]] to agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 22:34:23,608 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Preparing] for [Build [multi-agents/3/test-and-deploy/1/run-go-test-runOnAll-1/9]]
+2024-03-12 22:34:23,662 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Preparing] for [Build [multi-agents/3/test-and-deploy/1/deploy-api-python-runOnAll-1/10]]
+2024-03-12 22:34:24,817 INFO  [qtp1417842416-29] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Building] for [Build [multi-agents/3/test-and-deploy/1/deploy-api-python-runOnAll-1/10]]
+2024-03-12 22:34:24,828 INFO  [qtp1417842416-27] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Building] for [Build [multi-agents/3/test-and-deploy/1/run-go-test-runOnAll-1/9]]
+2024-03-12 22:34:24,837 INFO  [qtp1417842416-28] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting result [Failed] for [Build [multi-agents/3/test-and-deploy/1/deploy-api-python-runOnAll-1/10]]
+2024-03-12 22:34:24,843 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting result [Failed] for [Build [multi-agents/3/test-and-deploy/1/run-go-test-runOnAll-1/9]]
+2024-03-12 22:34:24,848 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Completing] for [Build [multi-agents/3/test-and-deploy/1/deploy-api-python-runOnAll-1/10]]
+2024-03-12 22:34:24,856 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Completing] for [Build [multi-agents/3/test-and-deploy/1/run-go-test-runOnAll-1/9]]
+2024-03-12 22:34:24,861 INFO  [qtp1417842416-40] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status and result [Completed, Failed] for [Build [multi-agents/3/test-and-deploy/1/deploy-api-python-runOnAll-1/10]]
+2024-03-12 22:34:24,869 INFO  [qtp1417842416-32] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status and result [Completed, Failed] for [Build [multi-agents/3/test-and-deploy/1/run-go-test-runOnAll-1/9]]
+2024-03-12 22:34:24,876 INFO  [qtp1417842416-32] Stage:234 - Stage is being completed by transition id: 60
+2024-03-12 22:36:37,762 ERROR [qtp1417842416-28] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:36:58,180 INFO  [qtp1417842416-32] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@65a5a782[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@1c220d11
+2024-03-12 22:36:58,181 INFO  [qtp1417842416-32] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@65a5a782[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:36:58,184 INFO  [qtp1417842416-32] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:36:58,199 INFO  [qtp1417842416-32] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:36:58,209 INFO  [qtp1417842416-32] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:36:58,210 INFO  [qtp1417842416-32] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:36:58,211 INFO  [qtp1417842416-32] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:36:58,211 INFO  [qtp1417842416-32] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@65a5a782[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:37:27,984 INFO  [qtp1417842416-31] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'multi-agents' requested by anonymous
+2024-03-12 22:37:27,985 INFO  [qtp1417842416-31] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'multi-agents' accepted for user anonymous
+2024-03-12 22:37:27,986 INFO  [qtp1417842416-31] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'multi-agents' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@7333b468[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 22:37:27 GMT 2024]'
+2024-03-12 22:37:30,120 INFO  [ThreadPoolTaskScheduler-8] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline multi-agents with build cause [ManualForcedBuildCause: Forced by anonymous]
+2024-03-12 22:37:30,131 INFO  [ThreadPoolTaskScheduler-8] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:37:30,134 INFO  [ThreadPoolTaskScheduler-8] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:37:45,040 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 4, 4, test-and-deploy, 1, deploy-api-python-runOnAll-1, 12]] to agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 22:37:45,055 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 4, 4, test-and-deploy, 1, run-go-test-runOnAll-1, 11]] to agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:37:55,061 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Preparing] for [Build [multi-agents/4/test-and-deploy/1/deploy-api-python-runOnAll-1/12]]
+2024-03-12 22:37:55,069 INFO  [qtp1417842416-32] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Preparing] for [Build [multi-agents/4/test-and-deploy/1/run-go-test-runOnAll-1/11]]
+2024-03-12 22:37:56,427 INFO  [qtp1417842416-27] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Building] for [Build [multi-agents/4/test-and-deploy/1/run-go-test-runOnAll-1/11]]
+2024-03-12 22:37:56,443 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting result [Failed] for [Build [multi-agents/4/test-and-deploy/1/run-go-test-runOnAll-1/11]]
+2024-03-12 22:37:56,458 INFO  [qtp1417842416-40] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Completing] for [Build [multi-agents/4/test-and-deploy/1/run-go-test-runOnAll-1/11]]
+2024-03-12 22:37:56,470 INFO  [qtp1417842416-38] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status and result [Completed, Failed] for [Build [multi-agents/4/test-and-deploy/1/run-go-test-runOnAll-1/11]]
+2024-03-12 22:37:56,747 INFO  [qtp1417842416-38] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Building] for [Build [multi-agents/4/test-and-deploy/1/deploy-api-python-runOnAll-1/12]]
+2024-03-12 22:37:56,762 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting result [Failed] for [Build [multi-agents/4/test-and-deploy/1/deploy-api-python-runOnAll-1/12]]
+2024-03-12 22:37:56,773 INFO  [qtp1417842416-32] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Completing] for [Build [multi-agents/4/test-and-deploy/1/deploy-api-python-runOnAll-1/12]]
+2024-03-12 22:37:56,780 INFO  [qtp1417842416-33] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status and result [Completed, Failed] for [Build [multi-agents/4/test-and-deploy/1/deploy-api-python-runOnAll-1/12]]
+2024-03-12 22:37:56,783 INFO  [qtp1417842416-33] Stage:234 - Stage is being completed by transition id: 72
+2024-03-12 22:38:45,680 ERROR [qtp1417842416-33] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:39:35,655 ERROR [qtp1417842416-26] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:39:52,265 INFO  [qtp1417842416-34] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'multi-agents' requested by anonymous
+2024-03-12 22:39:52,266 INFO  [qtp1417842416-34] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'multi-agents' accepted for user anonymous
+2024-03-12 22:39:52,266 INFO  [qtp1417842416-34] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'multi-agents' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@15024f02[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 22:39:52 GMT 2024]'
+2024-03-12 22:39:53,179 INFO  [ThreadPoolTaskScheduler-8] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline multi-agents with build cause [ManualForcedBuildCause: Forced by anonymous]
+2024-03-12 22:39:53,187 INFO  [ThreadPoolTaskScheduler-8] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:39:53,190 INFO  [ThreadPoolTaskScheduler-8] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:39:56,599 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 5, 5, test-and-deploy, 1, deploy-api-python-runOnAll-1, 14]] to agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:39:56,896 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 5, 5, test-and-deploy, 1, run-go-test-runOnAll-1, 13]] to agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 22:40:06,613 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Preparing] for [Build [multi-agents/5/test-and-deploy/1/deploy-api-python-runOnAll-1/14]]
+2024-03-12 22:40:06,933 INFO  [qtp1417842416-34] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Preparing] for [Build [multi-agents/5/test-and-deploy/1/run-go-test-runOnAll-1/13]]
+2024-03-12 22:40:07,312 INFO  [qtp1417842416-38] BuildRepositoryRemoteImpl:96 - [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, f3361b47-7343-464c-94dc-08d37499b315]] is reporting status [Building] for [Build [multi-agents/5/test-and-deploy/1/deploy-api-python-runOnAll-1/14]]
+2024-03-12 22:40:07,681 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Building] for [Build [multi-agents/5/test-and-deploy/1/run-go-test-runOnAll-1/13]]
+2024-03-12 22:40:07,969 INFO  [qtp1417842416-26] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting result [Passed] for [Build [multi-agents/5/test-and-deploy/1/run-go-test-runOnAll-1/13]]
+2024-03-12 22:40:07,983 INFO  [qtp1417842416-40] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status [Completing] for [Build [multi-agents/5/test-and-deploy/1/run-go-test-runOnAll-1/13]]
+2024-03-12 22:40:07,996 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, ff85e23f-dee3-493d-ba99-74a6a1d7ab65]] is reporting status and result [Completed, Passed] for [Build [multi-agents/5/test-and-deploy/1/run-go-test-runOnAll-1/13]]
+2024-03-12 22:41:13,536 ERROR [qtp1417842416-26] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:41:51,214 INFO  [qtp1417842416-26] PipelinePauseService:131 - [Pipeline Pause] Pipeline [multi-agents] is paused by [com.thoughtworks.go.server.domain.Username@4890a9f0[displayName=anonymous,username=anonymous]] because [stop API]
+2024-03-12 22:42:15,086 ERROR [qtp1417842416-24] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:50:25,380 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
+2024-03-12 22:50:25,426 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
+2024-03-12 22:50:25,427 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
+2024-03-12 22:50:25,546 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@5f5b32e2{STOPPED}
+2024-03-12 22:50:28,102 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
+2024-03-12 22:50:28,102 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
+2024-03-12 22:50:28,103 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@1121f56f. This might take a while depending on the size of the database.
+2024-03-12 22:50:28,105 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
+2024-03-12 22:50:28,105 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
+2024-03-12 22:50:28,105 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
+2024-03-12 22:50:28,133 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:50:30,331 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
+2024-03-12 22:50:30,331 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
+2024-03-12 22:50:30,385 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
+2024-03-12 22:50:30,395 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:50:30,406 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:50:30,408 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
+2024-03-12 22:50:30,408 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
+2024-03-12 22:50:30,424 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
+2024-03-12 22:50:30,424 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
+2024-03-12 22:50:30,425 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
+2024-03-12 22:50:30,425 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:50:30,469 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
+2024-03-12 22:50:30,469 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
+2024-03-12 22:50:30,483 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
+2024-03-12 22:50:30,485 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:50:30,507 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 1 ms
+2024-03-12 22:50:30,508 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
+2024-03-12 22:50:30,509 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
+2024-03-12 22:50:31,121 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+2024-03-12 22:50:31,155 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
+2024-03-12 22:50:31,173 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
+2024-03-12 22:50:31,212 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
+2024-03-12 22:50:31,216 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
+2024-03-12 22:50:31,222 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
+2024-03-12 22:50:31,231 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
+2024-03-12 22:50:31,236 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
+2024-03-12 22:50:31,255 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
+2024-03-12 22:50:31,294 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2024-03-12 22:50:31,297 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+2024-03-12 22:50:33,343 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
+2024-03-12 22:50:34,621 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
+2024-03-12 22:50:34,630 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 136 to version 136
+2024-03-12 22:50:34,648 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
+2024-03-12 22:50:34,648 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
+2024-03-12 22:50:34,775 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
+2024-03-12 22:50:34,775 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
+2024-03-12 22:50:34,827 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
+2024-03-12 22:50:34,842 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
+2024-03-12 22:50:34,844 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:50:34,844 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
+2024-03-12 22:50:34,845 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:50:34,845 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
+2024-03-12 22:50:34,849 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 22:50:34,857 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:50:34,879 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:50:34,880 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
+2024-03-12 22:50:34,880 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
+2024-03-12 22:50:34,896 INFO  [Thread-80] PipelineSqlMapDao:434 - Loading Active Pipelines to cache...Started
+2024-03-12 22:50:34,896 INFO  [WrapperJarAppMain] MaterialRepository:234 - Loading PMRs,Remaining 1 Pipelines (Total: 1)...
+2024-03-12 22:50:34,896 INFO  [Thread-81] PipelineSqlMapDao:443 - Loading pipeline history to cache...Started
+2024-03-12 22:50:34,897 INFO  [Thread-80] PipelineSqlMapDao:437 - Loading Active Pipelines to cache...Done
+2024-03-12 22:50:34,898 INFO  [Thread-81] PipelineSqlMapDao:447 - Loading pipeline history to cache...Done
+2024-03-12 22:50:34,921 INFO  [WrapperJarAppMain] MaterialRepository:309 - Loading modifications, Remaining 1 PMRs(Total: 1)...
+2024-03-12 22:50:34,937 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
+2024-03-12 22:50:34,953 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:50:34,953 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
+2024-03-12 22:50:34,954 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:50:34,960 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '1' building jobs. Added them with '2024-03-12T22:50:34.938Z' as the last heard time
+2024-03-12 22:50:34,967 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
+2024-03-12 22:50:34,971 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
+2024-03-12 22:50:34,997 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:50:35,000 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 22:50:35,005 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
+2024-03-12 22:50:35,013 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:50:35,407 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
+2024-03-12 22:50:35,410 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
+2024-03-12 22:50:35,697 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
+2024-03-12 22:50:35,699 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
+2024-03-12 22:50:35,719 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
+2024-03-12 22:50:35,720 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:50:35,720 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
+2024-03-12 22:50:35,720 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:50:35,742 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
+2024-03-12 22:50:35,744 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
+2024-03-12 22:50:35,781 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:50:35,781 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
+2024-03-12 22:50:35,781 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:50:35,782 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
+2024-03-12 22:50:43,439 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
+2024-03-12 22:50:49,116 INFO  [ThreadPoolTaskScheduler-3] GoFileConfigDataSource:137 - Config file changed at 1710283834765
+2024-03-12 22:50:49,116 INFO  [ThreadPoolTaskScheduler-3] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
+2024-03-12 22:50:49,162 INFO  [ThreadPoolTaskScheduler-3] CachedGoConfig:222 - About to notify config listeners
+2024-03-12 22:50:49,166 INFO  [ThreadPoolTaskScheduler-3] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
+2024-03-12 22:50:49,167 INFO  [ThreadPoolTaskScheduler-3] CachedGoConfig:230 - Finished notifying all listeners
+2024-03-12 22:51:15,564 INFO  [qtp1960840833-39] ScheduleService:503 - [Stage Cancellation] Cancelling stage StageIdentifier[multi-agents, 5, 5, test-and-deploy, 1]
+2024-03-12 22:51:15,566 INFO  [qtp1960840833-39] JobInstanceService:209 - cancelling job [JobInstance{stageId=5, name='deploy-api-python-runOnAll-1', state=Building, result=Unknown, agentUuid='a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6', stateTransitions=[com.thoughtworks.go.domain.JobStateTransition@514be2ed[currentState=Scheduled,stateChangeTime=Tue Mar 12 22:39:53 GMT 2024,jobId=14,stageId=5,id=74], com.thoughtworks.go.domain.JobStateTransition@28310345[currentState=Assigned,stateChangeTime=Tue Mar 12 22:39:56 GMT 2024,jobId=14,stageId=5,id=75], com.thoughtworks.go.domain.JobStateTransition@13c9a50d[currentState=Preparing,stateChangeTime=Tue Mar 12 22:40:06 GMT 2024,jobId=14,stageId=5,id=77], com.thoughtworks.go.domain.JobStateTransition@55e1828f[currentState=Building,stateChangeTime=Tue Mar 12 22:40:07 GMT 2024,jobId=14,stageId=5,id=79]], scheduledDate=Tue Mar 12 22:39:53 GMT 2024, timeProvider=com.thoughtworks.go.util.TimeProvider@b68516c, ignored=false, identifier=JobIdentifier[multi-agents, 5, 5, test-and-deploy, 1, deploy-api-python-runOnAll-1, 14], plan=null, runOnAllAgents=true, runMultipleInstance=false}]
+2024-03-12 22:51:15,588 INFO  [qtp1960840833-39] JobInstanceService:209 - cancelling job [JobInstance{stageId=5, name='run-go-test-runOnAll-1', state=Completed, result=Passed, agentUuid='ae12df90-0dd5-463b-aaf6-4caba5b8bba6', stateTransitions=[com.thoughtworks.go.domain.JobStateTransition@13ff3569[currentState=Scheduled,stateChangeTime=Tue Mar 12 22:39:53 GMT 2024,jobId=13,stageId=5,id=73], com.thoughtworks.go.domain.JobStateTransition@7083be3e[currentState=Assigned,stateChangeTime=Tue Mar 12 22:39:56 GMT 2024,jobId=13,stageId=5,id=76], com.thoughtworks.go.domain.JobStateTransition@734a1b7f[currentState=Preparing,stateChangeTime=Tue Mar 12 22:40:06 GMT 2024,jobId=13,stageId=5,id=78], com.thoughtworks.go.domain.JobStateTransition@21058a2c[currentState=Building,stateChangeTime=Tue Mar 12 22:40:07 GMT 2024,jobId=13,stageId=5,id=80], com.thoughtworks.go.domain.JobStateTransition@4bbbb718[currentState=Completing,stateChangeTime=Tue Mar 12 22:40:07 GMT 2024,jobId=13,stageId=5,id=81], com.thoughtworks.go.domain.JobStateTransition@2624821f[currentState=Completed,stateChangeTime=Tue Mar 12 22:40:07 GMT 2024,jobId=13,stageId=5,id=82]], scheduledDate=Tue Mar 12 22:39:53 GMT 2024, timeProvider=com.thoughtworks.go.util.TimeProvider@516e447, ignored=false, identifier=JobIdentifier[multi-agents, 5, 5, test-and-deploy, 1, run-go-test-runOnAll-1, 13], plan=null, runOnAllAgents=true, runMultipleInstance=false}]
+2024-03-12 22:51:15,590 INFO  [qtp1960840833-39] Stage:234 - Stage is being completed by transition id: 97
+2024-03-12 22:51:24,217 INFO  [qtp1960840833-39] PipelinePauseService:159 - [Pipeline Unpause] Pipeline [multi-agents] is unpaused by [com.thoughtworks.go.server.domain.Username@527efdc0[displayName=anonymous,username=anonymous]]
+2024-03-12 22:51:28,917 INFO  [qtp1960840833-34] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]] at location [/go] asked for a new cookie, assigned [cb23abc1-8a84-495e-84df-3610c57a61e8]
+2024-03-12 22:51:29,277 INFO  [qtp1960840833-31] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [29d80f1fda79, 172.24.0.3, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]] at location [/go] asked for a new cookie, assigned [bc0c5ca6-c7d0-4f55-93fd-757b2cec6004]
+2024-03-12 22:51:29,358 WARN  [qtp1960840833-34] AgentService:230 - Agent with UUID [a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6] changed IP Address from [172.23.0.3] to [172.24.0.2]
+2024-03-12 22:51:29,718 WARN  [qtp1960840833-31] AgentService:230 - Agent with UUID [ae12df90-0dd5-463b-aaf6-4caba5b8bba6] changed IP Address from [172.23.0.2] to [172.24.0.3]
+2024-03-12 22:53:11,112 INFO  [qtp1960840833-34] ServerVersionInfoManager:71 - [Go Update Check] Starting update check at: Tue Mar 12 22:53:11 GMT 2024
+2024-03-12 22:53:11,754 ERROR [qtp1960840833-24] Rails:-2 -   
+2024-03-12 22:53:11,755 ERROR [qtp1960840833-24] Rails:-2 - Errno::ENOENT (No such file or directory - config/go_update_server.pub):
+2024-03-12 22:53:11,755 ERROR [qtp1960840833-24] Rails:-2 -   
+2024-03-12 22:53:11,755 ERROR [qtp1960840833-24] Rails:-2 - app/models/api_v1/go_latest_version.rb:42:in `signing_public_key_tampered?'
+app/models/api_v1/go_latest_version.rb:28:in `valid?'
+app/controllers/api_v1/version_infos_controller.rb:23:in `update_server'
+2024-03-12 22:55:55,099 ERROR [qtp1960840833-33] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:56:05,078 INFO  [qtp1960840833-34] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@1026f34b[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@4089c41d
+2024-03-12 22:56:05,079 INFO  [qtp1960840833-34] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@1026f34b[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:56:05,082 INFO  [qtp1960840833-34] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:56:05,090 INFO  [qtp1960840833-34] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:56:05,105 INFO  [qtp1960840833-34] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:56:05,108 INFO  [qtp1960840833-34] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:56:05,109 INFO  [qtp1960840833-34] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:56:05,109 INFO  [qtp1960840833-34] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@1026f34b[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:58:43,705 ERROR [qtp1960840833-40] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 22:58:43,707 INFO  [qtp1960840833-40] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@7c1a907f[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.CreatePipelineConfigCommand@1a4912cc
+2024-03-12 22:58:43,708 INFO  [qtp1960840833-40] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@7c1a907f[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:58:43,713 INFO  [qtp1960840833-40] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:58:43,730 INFO  [qtp1960840833-40] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:58:43,741 INFO  [qtp1960840833-40] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:58:43,742 INFO  [qtp1960840833-40] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline build-python-api.
+2024-03-12 22:58:43,743 INFO  [qtp1960840833-40] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:58:43,743 INFO  [qtp1960840833-40] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@7c1a907f[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:58:43,753 INFO  [qtp1960840833-39] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'build-python-api' requested by anonymous
+2024-03-12 22:58:43,755 INFO  [qtp1960840833-39] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'build-python-api' accepted for user anonymous
+2024-03-12 22:58:43,759 INFO  [qtp1960840833-39] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'build-python-api' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@100b1b68[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 22:58:43 GMT 2024]'
+2024-03-12 22:58:44,266 INFO  [ThreadPoolTaskScheduler-7] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline build-python-api with build cause [ModificationBuildCause: modified by L0G1C06 <justgithub70@gmail.com>]
+2024-03-12 22:58:44,310 INFO  [ThreadPoolTaskScheduler-7] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:58:44,319 INFO  [ThreadPoolTaskScheduler-7] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:58:44,327 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:58:44,439 INFO  [87@MessageListener for MaterialUpdateStatusNotifier] ManualBuild:61 - 'Failed to trigger pipeline [build-python-api]'  because 'Stage [build-api] in pipeline [build-python-api] is still in progress'
+2024-03-12 22:58:49,567 INFO  [110@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[build-python-api, 1, 1, build-api, 1, run-build, 33]] to agent [Agent [c6a85946387a, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 22:58:59,639 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting status [Preparing] for [Build [build-python-api/1/build-api/1/run-build/33]]
+2024-03-12 22:59:03,255 ERROR [qtp1960840833-40] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/build-python-api/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:59:04,010 INFO  [qtp1960840833-24] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting status [Building] for [Build [build-python-api/1/build-api/1/run-build/33]]
+2024-03-12 22:59:19,515 INFO  [qtp1960840833-42] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@12625081[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@66cfc545
+2024-03-12 22:59:19,516 INFO  [qtp1960840833-42] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@12625081[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:59:19,523 INFO  [qtp1960840833-42] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:59:19,542 INFO  [qtp1960840833-42] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:59:19,553 INFO  [qtp1960840833-42] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:59:19,556 INFO  [qtp1960840833-42] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline build-python-api.
+2024-03-12 22:59:19,557 INFO  [qtp1960840833-42] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:59:19,557 INFO  [qtp1960840833-42] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@12625081[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:59:23,716 ERROR [qtp1960840833-24] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:59:34,987 INFO  [qtp1960840833-42] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@1f82d564[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@7f03b2c
+2024-03-12 22:59:34,987 INFO  [qtp1960840833-42] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@1f82d564[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:59:34,990 INFO  [qtp1960840833-42] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:59:34,998 INFO  [qtp1960840833-42] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:59:35,004 INFO  [qtp1960840833-42] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:59:35,005 INFO  [qtp1960840833-42] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:59:35,005 INFO  [qtp1960840833-42] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:59:35,005 INFO  [qtp1960840833-42] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@1f82d564[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:59:53,079 INFO  [qtp1960840833-28] ScheduleService:503 - [Stage Cancellation] Cancelling stage StageIdentifier[build-python-api, 1, 1, build-api, 1]
+2024-03-12 22:59:53,080 INFO  [qtp1960840833-28] JobInstanceService:209 - cancelling job [JobInstance{stageId=33, name='run-build', state=Building, result=Unknown, agentUuid='a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6', stateTransitions=[com.thoughtworks.go.domain.JobStateTransition@389522e[currentState=Scheduled,stateChangeTime=Tue Mar 12 22:58:44 GMT 2024,jobId=33,stageId=33,id=98], com.thoughtworks.go.domain.JobStateTransition@66d0a9bc[currentState=Assigned,stateChangeTime=Tue Mar 12 22:58:49 GMT 2024,jobId=33,stageId=33,id=99], com.thoughtworks.go.domain.JobStateTransition@3138f5a4[currentState=Preparing,stateChangeTime=Tue Mar 12 22:58:59 GMT 2024,jobId=33,stageId=33,id=100], com.thoughtworks.go.domain.JobStateTransition@51034aa0[currentState=Building,stateChangeTime=Tue Mar 12 22:59:04 GMT 2024,jobId=33,stageId=33,id=101]], scheduledDate=Tue Mar 12 22:58:44 GMT 2024, timeProvider=com.thoughtworks.go.util.TimeProvider@18526a8c, ignored=false, identifier=JobIdentifier[build-python-api, 1, 1, build-api, 1, run-build, 33], plan=null, runOnAllAgents=false, runMultipleInstance=false}]
+2024-03-12 22:59:53,084 INFO  [qtp1960840833-28] Stage:234 - Stage is being completed by transition id: 102
+2024-03-12 22:59:59,734 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting result [Cancelled] for [Build [build-python-api/1/build-api/1/run-build/33]]
+2024-03-12 22:59:59,754 INFO  [qtp1960840833-31] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting status and result [Completed, Cancelled] for [Build [build-python-api/1/build-api/1/run-build/33]]
+2024-03-12 23:01:25,223 ERROR [qtp1960840833-32] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/build-python-api/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 23:01:53,228 INFO  [qtp1960840833-32] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'multi-agents' requested by anonymous
+2024-03-12 23:01:53,229 INFO  [qtp1960840833-32] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'multi-agents' accepted for user anonymous
+2024-03-12 23:01:53,230 INFO  [qtp1960840833-32] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'multi-agents' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@2493008c[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 23:01:53 GMT 2024]'
+2024-03-12 23:01:54,387 INFO  [ThreadPoolTaskScheduler-3] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline multi-agents with build cause [ManualForcedBuildCause: Forced by anonymous]
+2024-03-12 23:01:54,405 INFO  [ThreadPoolTaskScheduler-3] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 23:01:54,411 INFO  [ThreadPoolTaskScheduler-3] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 23:02:00,071 INFO  [110@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[multi-agents, 6, 6, go-test, 1, run-go-test-runOnAll-1, 34]] to agent [Agent [d35db6b3a860, 172.24.0.3, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]]
+2024-03-12 23:02:07,466 ERROR [qtp1960840833-31] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/build-python-api/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 23:02:10,193 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:96 - [Agent [29d80f1fda79, 172.24.0.3, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, bc0c5ca6-c7d0-4f55-93fd-757b2cec6004]] is reporting status [Preparing] for [Build [multi-agents/6/go-test/1/run-go-test-runOnAll-1/34]]
+2024-03-12 23:02:11,055 INFO  [qtp1960840833-31] BuildRepositoryRemoteImpl:96 - [Agent [29d80f1fda79, 172.24.0.3, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, bc0c5ca6-c7d0-4f55-93fd-757b2cec6004]] is reporting status [Building] for [Build [multi-agents/6/go-test/1/run-go-test-runOnAll-1/34]]
+2024-03-12 23:02:11,567 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [29d80f1fda79, 172.24.0.3, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, bc0c5ca6-c7d0-4f55-93fd-757b2cec6004]] is reporting result [Passed] for [Build [multi-agents/6/go-test/1/run-go-test-runOnAll-1/34]]
+2024-03-12 23:02:11,588 INFO  [qtp1960840833-42] BuildRepositoryRemoteImpl:96 - [Agent [29d80f1fda79, 172.24.0.3, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, bc0c5ca6-c7d0-4f55-93fd-757b2cec6004]] is reporting status [Completing] for [Build [multi-agents/6/go-test/1/run-go-test-runOnAll-1/34]]
+2024-03-12 23:02:11,608 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:96 - [Agent [29d80f1fda79, 172.24.0.3, ae12df90-0dd5-463b-aaf6-4caba5b8bba6, bc0c5ca6-c7d0-4f55-93fd-757b2cec6004]] is reporting status and result [Completed, Passed] for [Build [multi-agents/6/go-test/1/run-go-test-runOnAll-1/34]]
+2024-03-12 23:02:11,617 INFO  [qtp1960840833-32] Stage:234 - Stage is being completed by transition id: 108
+2024-03-12 23:02:22,869 INFO  [qtp1960840833-32] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@5b22b038[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@34ac241
+2024-03-12 23:02:22,870 INFO  [qtp1960840833-32] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@5b22b038[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 23:02:22,878 INFO  [qtp1960840833-32] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 23:02:22,895 INFO  [qtp1960840833-32] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 23:02:22,900 INFO  [qtp1960840833-32] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 23:02:22,901 INFO  [qtp1960840833-32] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline build-python-api.
+2024-03-12 23:02:22,903 INFO  [qtp1960840833-32] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 23:02:22,904 INFO  [qtp1960840833-32] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@5b22b038[displayName=anonymous,username=anonymous] is completed
+2024-03-12 23:02:22,914 INFO  [140@MessageListener for MaterialUpdateListener] MaterialRepository:431 - Saving revision [DependencyMaterial{pipelineName='multi-agents', stageName='go-test'}, DependencyMaterialRevision[multi-agents/6/go-test/1] [pipelineLabel = 6];[Last Modified: 2024/03/12 23:02:11
+Revision: multi-agents/6/go-test/1
+UserName: null
+EmailAddress: null
+Comment: null
+PipelineLabel: 6
+]]
+2024-03-12 23:02:24,424 INFO  [ThreadPoolTaskScheduler-2] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline build-python-api with build cause [ModificationBuildCause: modified by L0G1C06 <justgithub70@gmail.com>]
+2024-03-12 23:02:24,435 INFO  [ThreadPoolTaskScheduler-2] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 23:02:24,439 INFO  [ThreadPoolTaskScheduler-2] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 23:02:29,918 INFO  [110@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[build-python-api, 2, 2, build-api, 1, run-build-runOnAll-1, 35]] to agent [Agent [c6a85946387a, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]]
+2024-03-12 23:02:39,952 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting status [Preparing] for [Build [build-python-api/2/build-api/1/run-build-runOnAll-1/35]]
+2024-03-12 23:02:41,815 INFO  [qtp1960840833-37] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting status [Building] for [Build [build-python-api/2/build-api/1/run-build-runOnAll-1/35]]
+2024-03-12 23:03:00,404 INFO  [qtp1960840833-42] ScheduleService:503 - [Stage Cancellation] Cancelling stage StageIdentifier[build-python-api, 2, 2, build-api, 1]
+2024-03-12 23:03:00,405 INFO  [qtp1960840833-42] JobInstanceService:209 - cancelling job [JobInstance{stageId=35, name='run-build-runOnAll-1', state=Building, result=Unknown, agentUuid='a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6', stateTransitions=[com.thoughtworks.go.domain.JobStateTransition@73a2b3cd[currentState=Scheduled,stateChangeTime=Tue Mar 12 23:02:24 GMT 2024,jobId=35,stageId=35,id=109], com.thoughtworks.go.domain.JobStateTransition@3240faff[currentState=Assigned,stateChangeTime=Tue Mar 12 23:02:29 GMT 2024,jobId=35,stageId=35,id=110], com.thoughtworks.go.domain.JobStateTransition@7c538983[currentState=Preparing,stateChangeTime=Tue Mar 12 23:02:39 GMT 2024,jobId=35,stageId=35,id=111], com.thoughtworks.go.domain.JobStateTransition@83c353c[currentState=Building,stateChangeTime=Tue Mar 12 23:02:41 GMT 2024,jobId=35,stageId=35,id=112]], scheduledDate=Tue Mar 12 23:02:24 GMT 2024, timeProvider=com.thoughtworks.go.util.TimeProvider@6e66d32d, ignored=false, identifier=JobIdentifier[build-python-api, 2, 2, build-api, 1, run-build-runOnAll-1, 35], plan=null, runOnAllAgents=true, runMultipleInstance=false}]
+2024-03-12 23:03:00,408 INFO  [qtp1960840833-42] Stage:234 - Stage is being completed by transition id: 113
+2024-03-12 23:03:09,579 INFO  [qtp1960840833-29] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting result [Cancelled] for [Build [build-python-api/2/build-api/1/run-build-runOnAll-1/35]]
+2024-03-12 23:03:09,590 INFO  [qtp1960840833-31] BuildRepositoryRemoteImpl:96 - [Agent [5344a2bc1a46, 172.24.0.2, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6, cb23abc1-8a84-495e-84df-3610c57a61e8]] is reporting status and result [Completed, Cancelled] for [Build [build-python-api/2/build-api/1/run-build-runOnAll-1/35]]
+2024-03-12 23:06:11,692 ERROR [qtp1960840833-32] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 23:06:31,117 INFO  [qtp1960840833-27] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@7f200e06[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.DeletePipelineConfigCommand@4736e950
+2024-03-12 23:06:31,118 INFO  [qtp1960840833-27] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@7f200e06[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 23:06:31,120 INFO  [qtp1960840833-27] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 23:06:31,131 INFO  [qtp1960840833-27] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 23:06:31,139 INFO  [qtp1960840833-27] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 23:06:31,140 INFO  [qtp1960840833-27] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline build-python-api.
+2024-03-12 23:06:31,141 INFO  [qtp1960840833-27] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 23:06:31,141 INFO  [qtp1960840833-27] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@7f200e06[displayName=anonymous,username=anonymous] is completed
+2024-03-12 23:06:31,141 WARN  [CCTray-Queue-Processor] MultiplexingQueueProcessor:65 - Failed to handle action in CCTray queue
+java.lang.NullPointerException: null
+	at com.thoughtworks.go.config.security.GoConfigPipelinePermissionsAuthority.lambda$pipelinesInGroupsAndTheirPermissions$0(GoConfigPipelinePermissionsAuthority.java:66)
+	at com.thoughtworks.go.domain.PipelineGroups.accept(PipelineGroups.java:122)
+	at com.thoughtworks.go.config.security.GoConfigPipelinePermissionsAuthority.pipelinesInGroupsAndTheirPermissions(GoConfigPipelinePermissionsAuthority.java:65)
+	at com.thoughtworks.go.config.security.GoConfigPipelinePermissionsAuthority.permissionsForPipeline(GoConfigPipelinePermissionsAuthority.java:52)
+	at com.thoughtworks.go.domain.cctray.CcTrayConfigChangeHandler.call(CcTrayConfigChangeHandler.java:52)
+	at com.thoughtworks.go.domain.cctray.CcTrayActivityListener$5$1.call(CcTrayActivityListener.java:150)
+	at com.thoughtworks.go.server.messaging.MultiplexingQueueProcessor.lambda$start$0(MultiplexingQueueProcessor.java:60)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2024-03-12 23:06:34,244 INFO  [qtp1960840833-27] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@aa5d7f8[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.DeletePipelineConfigCommand@62751fc5
+2024-03-12 23:06:34,245 INFO  [qtp1960840833-27] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@aa5d7f8[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 23:06:34,246 INFO  [qtp1960840833-27] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 23:06:34,258 INFO  [qtp1960840833-27] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 23:06:34,266 INFO  [qtp1960840833-27] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 23:06:34,267 INFO  [qtp1960840833-27] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 23:06:34,267 INFO  [qtp1960840833-27] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 23:06:34,267 INFO  [qtp1960840833-27] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@aa5d7f8[displayName=anonymous,username=anonymous] is completed
+2024-03-12 23:06:34,267 WARN  [CCTray-Queue-Processor] MultiplexingQueueProcessor:65 - Failed to handle action in CCTray queue
+java.lang.NullPointerException: null
+	at com.thoughtworks.go.config.security.GoConfigPipelinePermissionsAuthority.lambda$pipelinesInGroupsAndTheirPermissions$0(GoConfigPipelinePermissionsAuthority.java:66)
+	at com.thoughtworks.go.domain.PipelineGroups.accept(PipelineGroups.java:122)
+	at com.thoughtworks.go.config.security.GoConfigPipelinePermissionsAuthority.pipelinesInGroupsAndTheirPermissions(GoConfigPipelinePermissionsAuthority.java:65)
+	at com.thoughtworks.go.config.security.GoConfigPipelinePermissionsAuthority.permissionsForPipeline(GoConfigPipelinePermissionsAuthority.java:52)
+	at com.thoughtworks.go.domain.cctray.CcTrayConfigChangeHandler.call(CcTrayConfigChangeHandler.java:52)
+	at com.thoughtworks.go.domain.cctray.CcTrayActivityListener$5$1.call(CcTrayActivityListener.java:150)
+	at com.thoughtworks.go.server.messaging.MultiplexingQueueProcessor.lambda$start$0(MultiplexingQueueProcessor.java:60)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2024-03-12 23:09:40,411 ERROR [qtp1960840833-34] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 23:09:50,634 ERROR [qtp1960840833-29] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 23:10:00,668 ERROR [qtp1960840833-27] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 23:10:10,691 ERROR [qtp1960840833-29] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 23:10:19,757 ERROR [qtp1960840833-40] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 23:10:19,767 INFO  [qtp1960840833-40] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@6563cf77[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.CreateConfigRepoCommand@3674ca0
+2024-03-12 23:10:19,767 INFO  [qtp1960840833-40] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@6563cf77[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 23:10:19,770 INFO  [qtp1960840833-40] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 23:10:19,781 INFO  [qtp1960840833-40] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 23:10:19,790 INFO  [qtp1960840833-40] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.remote.ConfigRepoConfig config listeners
+2024-03-12 23:10:19,791 INFO  [qtp1960840833-40] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.remote.ConfigRepoConfig config listeners
+2024-03-12 23:10:19,792 INFO  [qtp1960840833-40] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@6563cf77[displayName=anonymous,username=anonymous] is completed
+2024-03-12 23:10:19,806 ERROR [qtp1960840833-27] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 23:10:20,710 ERROR [qtp1960840833-26] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 23:10:22,022 ERROR [123@MessageListener for ConfigMaterialUpdateListener] ConfigMaterialUpdateListener:88 - [Config Material Update] Error updating config material: GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false} . Reason: Error performing command: --- Command ---
+git submodule foreach --recursive "git checkout ."
+--- Environment ---
+{}
+--- INPUT ----
+
+
+--- EXIT CODE (128) ---
+--- STANDARD OUT ---
+
+--- STANDARD ERR ---
+STDERR: fatal: No url found for submodule path 'server/data/db/command_repository/default' in .gitmodules
+---
+

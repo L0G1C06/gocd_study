@@ -6,29 +6,10 @@
       <artifactsDir>artifacts</artifactsDir>
     </artifacts>
   </server>
-  <pipelines group="defaultGroup">
-    <pipeline name="multi-agents">
-      <materials>
-        <git url="https://github.com/L0G1C06/gocd_study" branch="main" />
-      </materials>
-      <stage name="test-and-deploy">
-        <jobs>
-          <job name="run-go-test" runOnAllAgents="true" timeout="1">
-            <tasks>
-              <exec command="go">
-                <arg>test</arg>
-              </exec>
-            </tasks>
-          </job>
-          <job name="deploy-api-python" runOnAllAgents="true" timeout="1">
-            <tasks>
-              <exec command="/bin/usr/python3.8">
-                <arg>main.py</arg>
-              </exec>
-            </tasks>
-          </job>
-        </jobs>
-      </stage>
-    </pipeline>
-  </pipelines>
+  <config-repos>
+    <config-repo id="pipeline-config.yaml" pluginId="yaml.config.plugin">
+      <git url="https://github.com/L0G1C06/gocd_study" branch="main" />
+    </config-repo>
+  </config-repos>
+  <pipelines group="defaultGroup" />
 </cruise>
