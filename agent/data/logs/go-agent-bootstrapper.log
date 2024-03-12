@@ -6,3 +6,11 @@
 2024-03-12 18:51:12,004 INFO  [WrapperJarAppMain] ParentClassAccessFilteringClassloader:43 - Loading com.thoughtworks.cruise.agent.common.launcher.AgentLauncher using java.net.URLClassLoader
 2024-03-12 18:51:12,026 INFO  [WrapperJarAppMain] AgentBootstrapper:74 - Attempting create and start launcher...
 2024-03-12 18:51:12,029 INFO  [WrapperJarAppMain] ParentClassAccessFilteringClassloader:43 - Loading com.thoughtworks.cruise.agent.common.launcher.AgentLaunchDescriptor using java.net.URLClassLoader
+2024-03-12 19:11:22,715 INFO  [WrapperJarAppMain] DefaultAgentLauncherCreatorImpl:67 - Attempting to load com.thoughtworks.go.agent.launcher.AgentLauncherImpl as specified by manifest key Go-Agent-Launcher-Class
+2024-03-12 19:11:22,731 INFO  [WrapperJarAppMain] ParentClassAccessFilteringClassloader:43 - Loading com.thoughtworks.cruise.agent.common.launcher.AgentLauncher using java.net.URLClassLoader
+2024-03-12 19:11:22,763 INFO  [WrapperJarAppMain] AgentBootstrapper:74 - Attempting create and start launcher...
+2024-03-12 19:11:22,768 INFO  [WrapperJarAppMain] ParentClassAccessFilteringClassloader:43 - Loading com.thoughtworks.cruise.agent.common.launcher.AgentLaunchDescriptor using java.net.URLClassLoader
+2024-03-12 19:22:13,263 INFO  [WrapperJarAppMain] DefaultAgentLauncherCreatorImpl:67 - Attempting to load com.thoughtworks.go.agent.launcher.AgentLauncherImpl as specified by manifest key Go-Agent-Launcher-Class
+2024-03-12 19:22:13,276 INFO  [WrapperJarAppMain] ParentClassAccessFilteringClassloader:43 - Loading com.thoughtworks.cruise.agent.common.launcher.AgentLauncher using java.net.URLClassLoader
+2024-03-12 19:22:13,296 INFO  [WrapperJarAppMain] AgentBootstrapper:74 - Attempting create and start launcher...
+2024-03-12 19:22:13,300 INFO  [WrapperJarAppMain] ParentClassAccessFilteringClassloader:43 - Loading com.thoughtworks.cruise.agent.common.launcher.AgentLaunchDescriptor using java.net.URLClassLoader

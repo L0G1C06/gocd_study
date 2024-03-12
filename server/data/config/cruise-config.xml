@@ -22,6 +22,15 @@
           </job>
         </jobs>
       </stage>
+      <stage name="python-api">
+        <jobs>
+          <job name="deploy-api">
+            <tasks>
+              <exec command="python3 main.py" />
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
     </pipeline>
   </pipelines>
 </cruise>

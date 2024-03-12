@@ -79,3 +79,71 @@
 2024-03-12 18:55:15,074 - 2024-03-12 18:55:15,074 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
 2024-03-12 18:55:15,075 - 2024-03-12 18:55:15,075 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/2/test/1/run-test/33]
 2024-03-12 18:55:25,062 - 2024-03-12 18:55:25,061 INFO  [pool-2-thread-1] HttpService:125 - Got back 200 from server
+2024-03-12 18:56:02,388 - 2024-03-12 18:56:02,388 ERROR [scheduler-3] DefaultGoPublisher:137 - git fetch failed for [https://github.com/L0G1C06/gocd_study]
+2024-03-12 18:56:02,389 - java.lang.RuntimeException: git fetch failed for [https://github.com/L0G1C06/gocd_study]
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.util.ExceptionUtils.bomb(ExceptionUtils.java:37)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.config.materials.git.GitMaterial.updateTo(GitMaterial.java:171)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.domain.MaterialRevision.updateTo(MaterialRevision.java:147)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.domain.materials.AbstractMaterialAgent.prepare(AbstractMaterialAgent.java:43)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.remote.work.BuildWork.prepareJob(BuildWork.java:165)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.remote.work.BuildWork.build(BuildWork.java:118)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.remote.work.BuildWork.doWork(BuildWork.java:79)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.agent.JobRunner.run(JobRunner.java:53)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.agent.AgentHTTPClientController.retrieveWork(AgentHTTPClientController.java:147)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.agent.AgentHTTPClientController.work(AgentHTTPClientController.java:119)
+2024-03-12 18:56:02,389 - 	at com.thoughtworks.go.agent.AgentController.loop(AgentController.java:84)
+2024-03-12 18:56:02,389 - 	at jdk.internal.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+2024-03-12 18:56:02,389 - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2024-03-12 18:56:02,389 - 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+2024-03-12 18:56:02,389 - 	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+2024-03-12 18:56:02,389 - 	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+2024-03-12 18:56:02,389 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+2024-03-12 18:56:02,390 - 	at java.base/java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+2024-03-12 18:56:02,390 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+2024-03-12 18:56:02,390 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+2024-03-12 18:56:02,390 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+2024-03-12 18:56:02,390 - 	at java.base/java.lang.Thread.run(Unknown Source)
+2024-03-12 18:56:02,390 - Caused by: java.lang.RuntimeException: git fetch failed for [https://github.com/L0G1C06/gocd_study]
+2024-03-12 18:56:02,390 - 	at com.thoughtworks.go.domain.materials.git.GitCommand.fetch(GitCommand.java:369)
+2024-03-12 18:56:02,390 - 	at com.thoughtworks.go.config.materials.git.GitMaterial.updateTo(GitMaterial.java:166)
+2024-03-12 18:56:02,390 - 	... 20 common frames omitted
+2024-03-12 18:56:02,390 - 2024-03-12 18:56:02,389 INFO  [scheduler-3] DefaultGoPublisher:100 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Failed] to Go Server for Build [go-gocd-demo/2/test/1/run-test/33]
+2024-03-12 18:56:02,395 - 2024-03-12 18:56:02,394 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 18:56:02,435 - 2024-03-12 18:56:02,435 INFO  [scheduler-3] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/2/test/1/run-test/33]
+2024-03-12 18:56:42,474 - 2024-03-12 18:56:42,473 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 18:56:42,474 - 2024-03-12 18:56:42,474 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/3/test/1/run-test/34]
+2024-03-12 18:56:43,899 - 2024-03-12 18:56:43,898 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 18:56:43,899 - 2024-03-12 18:56:43,899 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/3/test/1/run-test/34]
+2024-03-12 18:56:43,908 - 2024-03-12 18:56:43,908 INFO  [scheduler-3] CommandLine:371 - Running command: go test
+2024-03-12 18:56:44,169 - 2024-03-12 18:56:44,168 INFO  [Thread-40] CommandLine:51 - PASS
+2024-03-12 18:56:44,169 - 2024-03-12 18:56:44,169 INFO  [Thread-40] CommandLine:51 - ok  	_/godata/pipelines/go-gocd-demo	0.002s
+2024-03-12 18:56:44,178 - 2024-03-12 18:56:44,178 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 18:56:44,178 - 2024-03-12 18:56:44,178 INFO  [scheduler-3] DefaultGoPublisher:94 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/3/test/1/run-test/34]
+2024-03-12 18:56:44,194 - 2024-03-12 18:56:44,193 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 18:56:44,194 - 2024-03-12 18:56:44,194 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/3/test/1/run-test/34]
+2024-03-12 18:56:44,203 - 2024-03-12 18:56:44,203 INFO  [scheduler-3] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 18:56:44,203 - 2024-03-12 18:56:44,203 INFO  [scheduler-3] DefaultGoPublisher:100 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/3/test/1/run-test/34]
+2024-03-12 18:56:44,208 - 2024-03-12 18:56:44,208 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 18:56:44,226 - 2024-03-12 18:56:44,225 INFO  [scheduler-3] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/3/test/1/run-test/34]
+2024-03-12 19:12:24,112 - 2024-03-12 19:12:24,109 INFO  [main] ClassPathXmlApplicationContext:583 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f058f00: startup date [Tue Mar 12 19:12:24 GMT 2024]; root of context hierarchy
+2024-03-12 19:12:24,136 - 2024-03-12 19:12:24,135 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2024-03-12 19:12:24,213 - 2024-03-12 19:12:24,213 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext-plugin-infra.xml]
+2024-03-12 19:12:24,318 - 2024-03-12 19:12:24,317 INFO  [main] DefaultListableBeanFactory:821 - Overriding bean definition for bean 'pluginLoader' with a different definition: replacing [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:onejar:lib/go-plugin-infra-20.4.0-11749.jar!/com/thoughtworks/go/plugin/infra/PluginLoader.class]] with [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-plugin-infra.xml]]
+2024-03-12 19:12:24,407 - 2024-03-12 19:12:24,407 INFO  [main] AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2024-03-12 19:12:24,858 - 2024-03-12 19:12:24,857 INFO  [main] AgentStatusHttpd:90 - Agent status HTTP API server running on http://localhost:8152.
+2024-03-12 19:12:24,910 - 2024-03-12 19:12:24,909 INFO  [main] ThreadPoolTaskScheduler:166 - Initializing ExecutorService 'scheduler'
+2024-03-12 19:12:25,095 - 2024-03-12 19:12:25,095 INFO  [main] DefaultPluginJarChangeListener:67 - Plugin load starting: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:12:25,178 - 2024-03-12 19:12:25,178 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:12:25,969 - 2024-03-12 19:12:25,968 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
+2024-03-12 19:12:26,023 - 2024-03-12 19:12:26,023 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: 4bf2174d-1ff5-4740-b5e0-626d3c92c03d
+2024-03-12 19:23:14,333 - 2024-03-12 19:23:14,330 INFO  [main] ClassPathXmlApplicationContext:583 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f058f00: startup date [Tue Mar 12 19:23:14 GMT 2024]; root of context hierarchy
+2024-03-12 19:23:14,356 - 2024-03-12 19:23:14,356 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2024-03-12 19:23:14,456 - 2024-03-12 19:23:14,456 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext-plugin-infra.xml]
+2024-03-12 19:23:14,556 - 2024-03-12 19:23:14,555 INFO  [main] DefaultListableBeanFactory:821 - Overriding bean definition for bean 'pluginLoader' with a different definition: replacing [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:onejar:lib/go-plugin-infra-20.4.0-11749.jar!/com/thoughtworks/go/plugin/infra/PluginLoader.class]] with [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-plugin-infra.xml]]
+2024-03-12 19:23:14,701 - 2024-03-12 19:23:14,701 INFO  [main] AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2024-03-12 19:23:15,407 - 2024-03-12 19:23:15,405 INFO  [main] AgentStatusHttpd:90 - Agent status HTTP API server running on http://localhost:8152.
+2024-03-12 19:23:15,495 - 2024-03-12 19:23:15,494 INFO  [main] ThreadPoolTaskScheduler:166 - Initializing ExecutorService 'scheduler'
+2024-03-12 19:23:15,727 - 2024-03-12 19:23:15,726 INFO  [main] DefaultPluginJarChangeListener:67 - Plugin load starting: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:23:15,830 - 2024-03-12 19:23:15,830 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:23:16,568 - 2024-03-12 19:23:16,567 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
+2024-03-12 19:23:16,629 - 2024-03-12 19:23:16,629 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: fb1caabc-47d9-4705-864a-514a3a05847b
