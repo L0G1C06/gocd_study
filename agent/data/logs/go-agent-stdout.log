@@ -76,3 +76,6 @@
 2024-03-12 18:52:14,013 - 2024-03-12 18:52:14,013 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
 2024-03-12 18:52:14,832 - 2024-03-12 18:52:14,831 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
 2024-03-12 18:52:14,869 - 2024-03-12 18:52:14,869 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: 7aeae54a-46fd-4a50-a54f-e3bc4126f54f
+2024-03-12 18:55:15,074 - 2024-03-12 18:55:15,074 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 18:55:15,075 - 2024-03-12 18:55:15,075 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/2/test/1/run-test/33]
+2024-03-12 18:55:25,062 - 2024-03-12 18:55:25,061 INFO  [pool-2-thread-1] HttpService:125 - Got back 200 from server
