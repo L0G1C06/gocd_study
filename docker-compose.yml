@@ -8,10 +8,15 @@ services:
       - "8154:8154"
     volumes:
       - "./server/data:/godata"
-  gocdagent:
-    build: ./agent
-    image: "l0g1g06/gocdagent1"
+  pythonagent:
+    build: ./agent/pythonAgent
+    image: "l0g1g06/pythonagent"
     ports:
       - "8001:8001"
     volumes:
-      - "./agent/data:/godata"
+      - "./agent/pythonAgent/data:/godata"
+  golangagent:
+    build: ./agent/goAgent
+    image: "l0g1g06/golangagent"
+    volumes:
+      - "./agent/goAgent/data:/godata"

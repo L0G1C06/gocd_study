@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="136">
-  <server agentAutoRegisterKey="8eec9c56-cd5a-47c7-b496-996bad263c37" webhookSecret="a252faef-20f1-49fd-a01a-9c8b1b3e6476" commandRepositoryLocation="default" serverId="c71fed9e-dcce-4fde-8308-171fb2f0d8df" tokenGenerationKey="a9c25530-2203-45de-95e5-07648924b99e">
+  <server agentAutoRegisterKey="e796baa1-ae61-4233-9332-4fa644cbfbb4" webhookSecret="4a9bc316-6917-4778-8603-5bdd22b491be" commandRepositoryLocation="default" serverId="72f94b9d-02ea-4a90-b4be-47c78e3983b7" tokenGenerationKey="55e17499-24c1-4714-864f-3087a9465852">
     <backup emailOnSuccess="true" emailOnFailure="true" />
     <artifacts>
       <artifactsDir>artifacts</artifactsDir>
     </artifacts>
   </server>
   <pipelines group="defaultGroup">
-    <pipeline name="go-gocd-demo">
+    <pipeline name="multi-agents">
       <materials>
         <git url="https://github.com/L0G1C06/gocd_study" branch="main" />
       </materials>
-      <stage name="test">
+      <stage name="test-and-deploy">
         <jobs>
-          <job name="run-test">
+          <job name="run-go-test" runOnAllAgents="true" timeout="1">
             <tasks>
               <exec command="go">
                 <arg>test</arg>
               </exec>
             </tasks>
           </job>
-        </jobs>
-      </stage>
-      <stage name="python-api">
-        <jobs>
-          <job name="deploy-api">
+          <job name="deploy-api-python" runOnAllAgents="true" timeout="1">
             <tasks>
-              <exec command="python3.8 main.py">
-                <runif status="passed" />
+              <exec command="/bin/usr/python3.8">
+                <arg>main.py</arg>
               </exec>
             </tasks>
           </job>

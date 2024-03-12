@@ -1,724 +1,130 @@
-2024-03-12 18:46:13,321 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
-2024-03-12 18:46:13,345 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
-2024-03-12 18:46:13,345 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
-2024-03-12 18:46:13,409 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@1654675d{STOPPED}
-2024-03-12 18:46:15,511 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 18:46:15,511 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 18:46:15,512 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@26f1f35e. This might take a while depending on the size of the database.
-2024-03-12 18:46:15,513 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 18:46:15,514 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
-2024-03-12 18:46:15,514 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 18:46:15,537 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:46:15,640 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 18:46:15,641 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 5%
-2024-03-12 18:46:15,661 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 18:46:15,669 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:46:15,704 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:46:16,577 INFO  [WrapperJarAppMain] Migration_86:95 - migrating 0 rows
-2024-03-12 18:46:16,832 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
-2024-03-12 18:46:16,832 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
-2024-03-12 18:46:16,869 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 18:46:16,870 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 18:46:16,871 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
-2024-03-12 18:46:16,871 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:46:16,914 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 18:46:16,915 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 18:46:16,928 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 18:46:16,929 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:46:16,946 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 18:46:16,947 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 18:46:16,948 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
-2024-03-12 18:46:17,508 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2024-03-12 18:46:17,546 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
-2024-03-12 18:46:17,565 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
-2024-03-12 18:46:17,607 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
-2024-03-12 18:46:17,612 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
-2024-03-12 18:46:17,618 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
-2024-03-12 18:46:17,640 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
-2024-03-12 18:46:17,648 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
-2024-03-12 18:46:17,675 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
-2024-03-12 18:46:17,702 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
-2024-03-12 18:46:17,705 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
-2024-03-12 18:46:18,782 INFO  [WrapperJarAppMain] AESCipherProvider:61 - AES cipher not found. Creating a new cipher file
-2024-03-12 18:46:19,987 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
-2024-03-12 18:46:21,287 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 18:46:21,290 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 110 to version 136
-2024-03-12 18:46:21,497 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:46:21,497 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
-2024-03-12 18:46:21,498 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:46:21,499 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 18:46:21,503 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 18:46:21,608 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:46:21,608 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
-2024-03-12 18:46:21,609 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:46:21,641 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:46:21,646 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 18:46:21,650 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 18:46:21,931 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
-2024-03-12 18:46:21,931 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
-2024-03-12 18:46:22,125 WARN  [WrapperJarAppMain] ConfigRepository:195 - [CONFIG REPOSITORY] No head exists in the config repository.
-2024-03-12 18:46:22,141 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 18:46:22,150 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 18:46:22,206 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 18:46:22,207 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 18:46:22,277 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 18:46:22,300 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
-2024-03-12 18:46:22,313 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 18:46:22,327 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 18:46:22,328 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
-2024-03-12 18:46:22,328 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
-2024-03-12 18:46:22,330 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
-2024-03-12 18:46:22,371 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '0' building jobs. Added them with '2024-03-12T18:46:22.348Z' as the last heard time
-2024-03-12 18:46:22,383 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
-2024-03-12 18:46:22,390 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
-2024-03-12 18:46:22,628 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 18:46:22,633 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 18:46:22,666 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
-2024-03-12 18:46:22,666 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:46:22,666 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
-2024-03-12 18:46:22,666 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:46:22,702 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 18:46:22,706 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 18:46:22,767 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:46:22,768 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
-2024-03-12 18:46:22,768 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:46:22,768 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 18:46:30,020 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
-2024-03-12 18:46:35,619 INFO  [ThreadPoolTaskScheduler-4] GoFileConfigDataSource:137 - Config file changed at 1710269182187
-2024-03-12 18:46:35,619 INFO  [ThreadPoolTaskScheduler-4] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
-2024-03-12 18:46:35,630 INFO  [ThreadPoolTaskScheduler-4] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 18:46:35,633 INFO  [ThreadPoolTaskScheduler-4] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 18:46:35,633 INFO  [ThreadPoolTaskScheduler-4] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 18:47:21,331 INFO  [qtp1417842416-35] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975]] at location [/go] asked for a new cookie, assigned [396549e2-64ba-4822-976d-f1338a733ef3]
-2024-03-12 18:48:05,220 ERROR [qtp1417842416-43] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
-2024-03-12 18:48:05,228 INFO  [qtp1417842416-43] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@748eab6c[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.CreatePipelineConfigCommand@675fd4d3
-2024-03-12 18:48:05,231 INFO  [qtp1417842416-43] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@748eab6c[displayName=anonymous,username=anonymous] is being processed
-2024-03-12 18:48:05,247 INFO  [qtp1417842416-43] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
-2024-03-12 18:48:05,258 INFO  [qtp1417842416-43] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
-2024-03-12 18:48:05,269 INFO  [qtp1417842416-43] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
-2024-03-12 18:48:05,273 INFO  [qtp1417842416-43] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline go-gocd-demo.
-2024-03-12 18:48:05,276 INFO  [qtp1417842416-43] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
-2024-03-12 18:48:05,276 INFO  [qtp1417842416-43] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@748eab6c[displayName=anonymous,username=anonymous] is completed
-2024-03-12 18:48:05,277 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:48:05,301 INFO  [qtp1417842416-34] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'go-gocd-demo' requested by anonymous
-2024-03-12 18:48:05,302 INFO  [qtp1417842416-34] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'go-gocd-demo' accepted for user anonymous
-2024-03-12 18:48:05,313 INFO  [qtp1417842416-34] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'go-gocd-demo' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@783d5b8a[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 18:48:05 GMT 2024]'
-2024-03-12 18:48:05,723 INFO  [qtp1417842416-25] ServerVersionInfoManager:71 - [Go Update Check] Starting update check at: Tue Mar 12 18:48:05 GMT 2024
-2024-03-12 18:48:06,420 ERROR [qtp1417842416-34] Rails:-2 -   
-2024-03-12 18:48:06,420 ERROR [qtp1417842416-34] Rails:-2 - Errno::ENOENT (No such file or directory - config/go_update_server.pub):
-2024-03-12 18:48:06,421 ERROR [qtp1417842416-34] Rails:-2 -   
-2024-03-12 18:48:06,421 ERROR [qtp1417842416-34] Rails:-2 - app/models/api_v1/go_latest_version.rb:42:in `signing_public_key_tampered?'
+2024-03-12 22:19:34,381 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
+2024-03-12 22:19:34,408 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
+2024-03-12 22:19:34,409 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
+2024-03-12 22:19:34,489 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@1654675d{STOPPED}
+2024-03-12 22:19:37,063 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
+2024-03-12 22:19:37,063 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
+2024-03-12 22:19:37,064 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@26f1f35e. This might take a while depending on the size of the database.
+2024-03-12 22:19:37,066 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
+2024-03-12 22:19:37,066 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
+2024-03-12 22:19:37,066 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
+2024-03-12 22:19:37,111 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:19:37,257 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
+2024-03-12 22:19:37,258 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 5%
+2024-03-12 22:19:37,286 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
+2024-03-12 22:19:37,304 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:19:37,355 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:19:38,312 INFO  [WrapperJarAppMain] Migration_86:95 - migrating 0 rows
+2024-03-12 22:19:38,698 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
+2024-03-12 22:19:38,699 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
+2024-03-12 22:19:38,747 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
+2024-03-12 22:19:38,748 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
+2024-03-12 22:19:38,749 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
+2024-03-12 22:19:38,750 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:19:38,791 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
+2024-03-12 22:19:38,792 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
+2024-03-12 22:19:38,808 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
+2024-03-12 22:19:38,809 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:19:38,828 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
+2024-03-12 22:19:38,830 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
+2024-03-12 22:19:38,830 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
+2024-03-12 22:19:39,545 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
+2024-03-12 22:19:39,606 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
+2024-03-12 22:19:39,634 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
+2024-03-12 22:19:39,670 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
+2024-03-12 22:19:39,674 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
+2024-03-12 22:19:39,681 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
+2024-03-12 22:19:39,699 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
+2024-03-12 22:19:39,709 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
+2024-03-12 22:19:39,744 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
+2024-03-12 22:19:39,790 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2024-03-12 22:19:39,793 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+2024-03-12 22:19:40,874 INFO  [WrapperJarAppMain] AESCipherProvider:61 - AES cipher not found. Creating a new cipher file
+2024-03-12 22:19:42,191 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
+2024-03-12 22:19:43,769 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 110 to version 136
+2024-03-12 22:19:43,777 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
+2024-03-12 22:19:44,045 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:19:44,046 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
+2024-03-12 22:19:44,046 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:19:44,047 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
+2024-03-12 22:19:44,054 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 22:19:44,159 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:19:44,159 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
+2024-03-12 22:19:44,159 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:19:44,182 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:19:44,184 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 22:19:44,187 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
+2024-03-12 22:19:44,484 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
+2024-03-12 22:19:44,487 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
+2024-03-12 22:19:44,580 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
+2024-03-12 22:19:44,581 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
+2024-03-12 22:19:44,747 WARN  [WrapperJarAppMain] ConfigRepository:195 - [CONFIG REPOSITORY] No head exists in the config repository.
+2024-03-12 22:19:44,802 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
+2024-03-12 22:19:44,804 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
+2024-03-12 22:19:44,834 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
+2024-03-12 22:19:44,835 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:19:44,835 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
+2024-03-12 22:19:44,835 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:19:44,850 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
+2024-03-12 22:19:44,850 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
+2024-03-12 22:19:44,884 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
+2024-03-12 22:19:44,887 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
+2024-03-12 22:19:44,956 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
+2024-03-12 22:19:44,986 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
+2024-03-12 22:19:44,991 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
+2024-03-12 22:19:44,991 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
+2024-03-12 22:19:44,992 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
+2024-03-12 22:19:44,992 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
+2024-03-12 22:19:45,003 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
+2024-03-12 22:19:45,020 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
+2024-03-12 22:19:45,020 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
+2024-03-12 22:19:45,020 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
+2024-03-12 22:19:45,023 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
+2024-03-12 22:19:45,059 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '0' building jobs. Added them with '2024-03-12T22:19:45.040Z' as the last heard time
+2024-03-12 22:19:45,066 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
+2024-03-12 22:19:45,069 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
+2024-03-12 22:19:54,119 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
+2024-03-12 22:19:59,703 INFO  [ThreadPoolTaskScheduler-1] GoFileConfigDataSource:137 - Config file changed at 1710281984825
+2024-03-12 22:19:59,704 INFO  [ThreadPoolTaskScheduler-1] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
+2024-03-12 22:19:59,774 INFO  [ThreadPoolTaskScheduler-1] CachedGoConfig:222 - About to notify config listeners
+2024-03-12 22:19:59,782 INFO  [ThreadPoolTaskScheduler-1] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
+2024-03-12 22:19:59,783 INFO  [ThreadPoolTaskScheduler-1] CachedGoConfig:230 - Finished notifying all listeners
+2024-03-12 22:20:06,867 INFO  [qtp1417842416-33] ServerVersionInfoManager:71 - [Go Update Check] Starting update check at: Tue Mar 12 22:20:06 GMT 2024
+2024-03-12 22:20:08,219 ERROR [qtp1417842416-33] Rails:-2 -   
+2024-03-12 22:20:08,220 ERROR [qtp1417842416-33] Rails:-2 - Errno::ENOENT (No such file or directory - config/go_update_server.pub):
+2024-03-12 22:20:08,220 ERROR [qtp1417842416-33] Rails:-2 -   
+2024-03-12 22:20:08,221 ERROR [qtp1417842416-33] Rails:-2 - app/models/api_v1/go_latest_version.rb:42:in `signing_public_key_tampered?'
 app/models/api_v1/go_latest_version.rb:28:in `valid?'
 app/controllers/api_v1/version_infos_controller.rb:23:in `update_server'
-2024-03-12 18:48:08,762 INFO  [125@MessageListener for MaterialUpdateListener] ScmMaterialUpdater:60 - [Material Update] Found '1' modifications for material 'GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false}' with flyweight 'c9d10db48663b508409c377dbef7ba3ad91c28c3905370863387105865b36947' using working directory '/go-working-dir/pipelines/flyweight/f647cab2-5df6-4e94-8361-50c7d1affa18'
-2024-03-12 18:48:09,638 INFO  [ThreadPoolTaskScheduler-7] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline go-gocd-demo with build cause [ManualForcedBuildCause: Forced by anonymous]
-2024-03-12 18:48:09,650 INFO  [ThreadPoolTaskScheduler-7] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 18:48:09,656 INFO  [ThreadPoolTaskScheduler-7] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 18:48:11,403 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 1, 1, test, 1, run-test, 1]] to agent [Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 18:48:21,460 INFO  [qtp1417842416-36] BuildRepositoryRemoteImpl:96 - [Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975, 396549e2-64ba-4822-976d-f1338a733ef3]] is reporting status [Preparing] for [Build [go-gocd-demo/1/test/1/run-test/1]]
-2024-03-12 18:48:25,910 INFO  [qtp1417842416-35] BuildRepositoryRemoteImpl:96 - [Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975, 396549e2-64ba-4822-976d-f1338a733ef3]] is reporting status [Building] for [Build [go-gocd-demo/1/test/1/run-test/1]]
-2024-03-12 18:48:26,167 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:96 - [Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975, 396549e2-64ba-4822-976d-f1338a733ef3]] is reporting result [Passed] for [Build [go-gocd-demo/1/test/1/run-test/1]]
-2024-03-12 18:48:26,181 INFO  [qtp1417842416-42] BuildRepositoryRemoteImpl:96 - [Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975, 396549e2-64ba-4822-976d-f1338a733ef3]] is reporting status [Completing] for [Build [go-gocd-demo/1/test/1/run-test/1]]
-2024-03-12 18:48:26,194 INFO  [qtp1417842416-38] BuildRepositoryRemoteImpl:96 - [Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975, 396549e2-64ba-4822-976d-f1338a733ef3]] is reporting status and result [Completed, Passed] for [Build [go-gocd-demo/1/test/1/run-test/1]]
-2024-03-12 18:48:26,202 INFO  [qtp1417842416-38] Stage:234 - Stage is being completed by transition id: 6
-2024-03-12 18:51:12,229 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
-2024-03-12 18:51:12,260 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
-2024-03-12 18:51:12,260 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
-2024-03-12 18:51:12,337 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@5f5b32e2{STOPPED}
-2024-03-12 18:51:14,437 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 18:51:14,437 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 18:51:14,438 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@1121f56f. This might take a while depending on the size of the database.
-2024-03-12 18:51:14,439 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 18:51:14,440 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
-2024-03-12 18:51:14,440 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 18:51:14,465 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:51:16,591 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 18:51:16,591 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 18:51:16,632 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 18:51:16,640 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:51:16,650 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:51:16,651 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
-2024-03-12 18:51:16,652 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
-2024-03-12 18:51:16,666 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 18:51:16,667 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 18:51:16,667 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
-2024-03-12 18:51:16,668 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:51:16,708 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 18:51:16,709 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 18:51:16,729 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 18:51:16,732 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:51:16,760 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 1 ms
-2024-03-12 18:51:16,762 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 18:51:16,763 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
-2024-03-12 18:51:17,297 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2024-03-12 18:51:17,346 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
-2024-03-12 18:51:17,362 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
-2024-03-12 18:51:17,394 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
-2024-03-12 18:51:17,397 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
-2024-03-12 18:51:17,402 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
-2024-03-12 18:51:17,409 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
-2024-03-12 18:51:17,413 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
-2024-03-12 18:51:17,430 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
-2024-03-12 18:51:17,462 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
-2024-03-12 18:51:17,465 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
-2024-03-12 18:51:19,411 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
-2024-03-12 18:51:20,403 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 18:51:20,449 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 136 to version 136
-2024-03-12 18:51:20,471 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
-2024-03-12 18:51:20,472 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
-2024-03-12 18:51:20,538 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:51:20,539 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
-2024-03-12 18:51:20,539 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:51:20,539 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 18:51:20,541 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 18:51:20,598 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:51:20,598 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
-2024-03-12 18:51:20,598 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:51:20,616 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:51:20,618 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 18:51:20,621 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 18:51:20,651 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 18:51:20,651 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 18:51:20,722 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 18:51:20,742 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
-2024-03-12 18:51:20,753 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 18:51:20,770 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 18:51:20,771 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
-2024-03-12 18:51:20,771 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
-2024-03-12 18:51:20,783 INFO  [Thread-81] PipelineSqlMapDao:443 - Loading pipeline history to cache...Started
-2024-03-12 18:51:20,783 INFO  [Thread-80] PipelineSqlMapDao:434 - Loading Active Pipelines to cache...Started
-2024-03-12 18:51:20,783 INFO  [WrapperJarAppMain] MaterialRepository:234 - Loading PMRs,Remaining 1 Pipelines (Total: 1)...
-2024-03-12 18:51:20,784 INFO  [Thread-80] PipelineSqlMapDao:437 - Loading Active Pipelines to cache...Done
-2024-03-12 18:51:20,784 INFO  [Thread-81] PipelineSqlMapDao:447 - Loading pipeline history to cache...Done
-2024-03-12 18:51:20,803 INFO  [WrapperJarAppMain] MaterialRepository:309 - Loading modifications, Remaining 1 PMRs(Total: 1)...
-2024-03-12 18:51:20,812 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
-2024-03-12 18:51:20,842 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '0' building jobs. Added them with '2024-03-12T18:51:20.813Z' as the last heard time
-2024-03-12 18:51:20,854 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
-2024-03-12 18:51:20,859 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
-2024-03-12 18:51:20,892 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:51:20,893 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 18:51:20,898 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 18:51:21,239 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 18:51:21,242 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 18:51:21,269 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
-2024-03-12 18:51:21,269 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:51:21,269 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
-2024-03-12 18:51:21,269 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:51:21,289 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 18:51:21,292 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 18:51:21,343 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 18:51:21,343 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
-2024-03-12 18:51:21,343 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 18:51:21,344 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 18:51:28,270 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
-2024-03-12 18:51:33,824 INFO  [ThreadPoolTaskScheduler-10] GoFileConfigDataSource:137 - Config file changed at 1710269480635
-2024-03-12 18:51:33,826 INFO  [ThreadPoolTaskScheduler-10] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
-2024-03-12 18:51:33,845 INFO  [ThreadPoolTaskScheduler-10] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 18:51:33,848 INFO  [ThreadPoolTaskScheduler-10] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 18:51:33,849 INFO  [ThreadPoolTaskScheduler-10] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 18:51:38,846 INFO  [111@MessageListener for ScheduleCheckListener] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 18:52:14,865 INFO  [qtp1960840833-41] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975]] at location [/go] asked for a new cookie, assigned [7aeae54a-46fd-4a50-a54f-e3bc4126f54f]
-2024-03-12 18:52:15,317 WARN  [qtp1960840833-41] AgentService:230 - Agent with UUID [52767143-766f-4884-8519-3cb5718ed975] changed IP Address from [172.28.0.2] to [172.29.0.2]
-2024-03-12 18:54:56,475 INFO  [127@MessageListener for MaterialUpdateListener] ScmMaterialUpdater:60 - [Material Update] Found '1' modifications for material 'GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false}' with flyweight 'c9d10db48663b508409c377dbef7ba3ad91c28c3905370863387105865b36947' using working directory '/go-working-dir/pipelines/flyweight/f647cab2-5df6-4e94-8361-50c7d1affa18'
-2024-03-12 18:54:58,870 INFO  [ThreadPoolTaskScheduler-3] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline go-gocd-demo with build cause [ModificationBuildCause: modified by L0G1C06 <justgithub70@gmail.com>]
-2024-03-12 18:54:58,892 INFO  [ThreadPoolTaskScheduler-3] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 18:54:58,898 INFO  [ThreadPoolTaskScheduler-3] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 18:55:05,049 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 2, 2, test, 1, run-test, 33]] to agent [Agent [8e37088f9e8b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 18:55:15,079 INFO  [qtp1960840833-39] BuildRepositoryRemoteImpl:96 - [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975, 7aeae54a-46fd-4a50-a54f-e3bc4126f54f]] is reporting status [Preparing] for [Build [go-gocd-demo/2/test/1/run-test/33]]
-2024-03-12 18:56:02,399 INFO  [qtp1960840833-37] BuildRepositoryRemoteImpl:96 - [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975, 7aeae54a-46fd-4a50-a54f-e3bc4126f54f]] is reporting status and result [Completed, Failed] for [Build [go-gocd-demo/2/test/1/run-test/33]]
-2024-03-12 18:56:02,415 INFO  [qtp1960840833-37] Stage:234 - Stage is being completed by transition id: 38
-2024-03-12 18:56:09,322 INFO  [128@MessageListener for MaterialUpdateListener] ScmMaterialUpdater:60 - [Material Update] Found '1' modifications for material 'GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false}' with flyweight 'c9d10db48663b508409c377dbef7ba3ad91c28c3905370863387105865b36947' using working directory '/go-working-dir/pipelines/flyweight/f647cab2-5df6-4e94-8361-50c7d1affa18'
-2024-03-12 18:56:18,932 INFO  [ThreadPoolTaskScheduler-9] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline go-gocd-demo with build cause [ModificationBuildCause: modified by L0G1C06 <justgithub70@gmail.com>]
-2024-03-12 18:56:18,939 INFO  [ThreadPoolTaskScheduler-9] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 18:56:18,943 INFO  [ThreadPoolTaskScheduler-9] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 18:56:32,464 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 3, 3, test, 1, run-test, 34]] to agent [Agent [8e37088f9e8b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 18:56:42,477 INFO  [qtp1960840833-36] BuildRepositoryRemoteImpl:96 - [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975, 7aeae54a-46fd-4a50-a54f-e3bc4126f54f]] is reporting status [Preparing] for [Build [go-gocd-demo/3/test/1/run-test/34]]
-2024-03-12 18:56:43,902 INFO  [qtp1960840833-26] BuildRepositoryRemoteImpl:96 - [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975, 7aeae54a-46fd-4a50-a54f-e3bc4126f54f]] is reporting status [Building] for [Build [go-gocd-demo/3/test/1/run-test/34]]
-2024-03-12 18:56:44,181 INFO  [qtp1960840833-41] BuildRepositoryRemoteImpl:96 - [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975, 7aeae54a-46fd-4a50-a54f-e3bc4126f54f]] is reporting result [Passed] for [Build [go-gocd-demo/3/test/1/run-test/34]]
-2024-03-12 18:56:44,197 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:96 - [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975, 7aeae54a-46fd-4a50-a54f-e3bc4126f54f]] is reporting status [Completing] for [Build [go-gocd-demo/3/test/1/run-test/34]]
-2024-03-12 18:56:44,211 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [4491e00e777b, 172.29.0.2, 52767143-766f-4884-8519-3cb5718ed975, 7aeae54a-46fd-4a50-a54f-e3bc4126f54f]] is reporting status and result [Completed, Passed] for [Build [go-gocd-demo/3/test/1/run-test/34]]
-2024-03-12 18:56:44,215 INFO  [qtp1960840833-40] Stage:234 - Stage is being completed by transition id: 44
-2024-03-12 19:11:23,125 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
-2024-03-12 19:11:23,154 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
-2024-03-12 19:11:23,155 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
-2024-03-12 19:11:23,226 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@410d5483{STOPPED}
-2024-03-12 19:11:25,280 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:11:25,280 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:11:25,282 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@646120bd. This might take a while depending on the size of the database.
-2024-03-12 19:11:25,284 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:11:25,284 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
-2024-03-12 19:11:25,285 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:11:25,320 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:11:27,452 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:11:27,452 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:11:27,493 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:11:27,505 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:11:27,518 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:11:27,520 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
-2024-03-12 19:11:27,520 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
-2024-03-12 19:11:27,535 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:11:27,535 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:11:27,535 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
-2024-03-12 19:11:27,536 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:11:27,571 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:11:27,572 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:11:27,581 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:11:27,583 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:11:27,609 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 1 ms
-2024-03-12 19:11:27,611 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 19:11:27,612 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
-2024-03-12 19:11:28,169 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2024-03-12 19:11:28,202 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
-2024-03-12 19:11:28,218 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
-2024-03-12 19:11:28,250 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
-2024-03-12 19:11:28,254 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
-2024-03-12 19:11:28,261 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
-2024-03-12 19:11:28,275 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
-2024-03-12 19:11:28,283 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
-2024-03-12 19:11:28,310 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
-2024-03-12 19:11:28,340 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
-2024-03-12 19:11:28,343 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
-2024-03-12 19:11:30,166 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
-2024-03-12 19:11:31,043 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:11:31,084 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 136 to version 136
-2024-03-12 19:11:31,106 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
-2024-03-12 19:11:31,107 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
-2024-03-12 19:11:31,187 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:11:31,187 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
-2024-03-12 19:11:31,187 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:11:31,188 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:11:31,193 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:11:31,231 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:11:31,231 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:11:31,272 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:11:31,283 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
-2024-03-12 19:11:31,286 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:11:31,286 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
-2024-03-12 19:11:31,286 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:11:31,294 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 19:11:31,303 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:11:31,306 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:11:31,308 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:11:31,310 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 19:11:31,311 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
-2024-03-12 19:11:31,311 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
-2024-03-12 19:11:31,320 INFO  [Thread-80] PipelineSqlMapDao:434 - Loading Active Pipelines to cache...Started
-2024-03-12 19:11:31,320 INFO  [Thread-81] PipelineSqlMapDao:443 - Loading pipeline history to cache...Started
-2024-03-12 19:11:31,320 INFO  [WrapperJarAppMain] MaterialRepository:234 - Loading PMRs,Remaining 1 Pipelines (Total: 1)...
-2024-03-12 19:11:31,321 INFO  [Thread-80] PipelineSqlMapDao:437 - Loading Active Pipelines to cache...Done
-2024-03-12 19:11:31,322 INFO  [Thread-81] PipelineSqlMapDao:447 - Loading pipeline history to cache...Done
-2024-03-12 19:11:31,337 INFO  [WrapperJarAppMain] MaterialRepository:309 - Loading modifications, Remaining 1 PMRs(Total: 1)...
-2024-03-12 19:11:31,347 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
-2024-03-12 19:11:31,375 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '0' building jobs. Added them with '2024-03-12T19:11:31.348Z' as the last heard time
-2024-03-12 19:11:31,384 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
-2024-03-12 19:11:31,388 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
-2024-03-12 19:11:31,418 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:11:31,637 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:11:31,642 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:11:31,907 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:11:31,909 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:11:31,929 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
-2024-03-12 19:11:31,929 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:11:31,929 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
-2024-03-12 19:11:31,929 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:11:31,948 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:11:31,950 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:11:31,981 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:11:31,981 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
-2024-03-12 19:11:31,981 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:11:31,981 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:11:37,827 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
-2024-03-12 19:11:43,364 INFO  [ThreadPoolTaskScheduler-3] GoFileConfigDataSource:137 - Config file changed at 1710270691222
-2024-03-12 19:11:43,365 INFO  [ThreadPoolTaskScheduler-3] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
-2024-03-12 19:11:43,393 INFO  [ThreadPoolTaskScheduler-3] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:11:43,397 INFO  [ThreadPoolTaskScheduler-3] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:11:43,398 INFO  [ThreadPoolTaskScheduler-3] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:11:48,386 INFO  [ThreadPoolTaskScheduler-9] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:12:26,017 INFO  [qtp28140798-42] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [e00f9730fc24, 172.30.0.3, 52767143-766f-4884-8519-3cb5718ed975]] at location [/go] asked for a new cookie, assigned [4bf2174d-1ff5-4740-b5e0-626d3c92c03d]
-2024-03-12 19:12:26,451 WARN  [qtp28140798-42] AgentService:230 - Agent with UUID [52767143-766f-4884-8519-3cb5718ed975] changed IP Address from [172.29.0.2] to [172.30.0.3]
-2024-03-12 19:22:13,597 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
-2024-03-12 19:22:13,617 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
-2024-03-12 19:22:13,618 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
-2024-03-12 19:22:13,676 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@495fd7a5{STOPPED}
-2024-03-12 19:22:15,653 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:22:15,654 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:22:15,655 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@f1a1c98. This might take a while depending on the size of the database.
-2024-03-12 19:22:15,657 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:22:15,657 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
-2024-03-12 19:22:15,657 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:22:15,693 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:22:17,838 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:22:17,838 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:22:17,902 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:22:17,912 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:22:17,921 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:22:17,923 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
-2024-03-12 19:22:17,924 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
-2024-03-12 19:22:17,947 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:22:17,947 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:22:17,948 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
-2024-03-12 19:22:17,949 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:22:17,993 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:22:17,993 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:22:18,014 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:22:18,016 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:22:18,042 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 1 ms
-2024-03-12 19:22:18,045 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 19:22:18,045 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
-2024-03-12 19:22:18,647 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2024-03-12 19:22:18,678 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
-2024-03-12 19:22:18,694 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
-2024-03-12 19:22:18,727 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
-2024-03-12 19:22:18,730 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
-2024-03-12 19:22:18,737 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
-2024-03-12 19:22:18,745 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
-2024-03-12 19:22:18,749 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
-2024-03-12 19:22:18,766 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
-2024-03-12 19:22:18,797 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
-2024-03-12 19:22:18,801 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
-2024-03-12 19:22:20,455 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
-2024-03-12 19:22:21,187 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:22:21,194 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 136 to version 136
-2024-03-12 19:22:21,211 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
-2024-03-12 19:22:21,212 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
-2024-03-12 19:22:21,335 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:22:21,335 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
-2024-03-12 19:22:21,335 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:22:21,336 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:22:21,341 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:22:21,349 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:22:21,349 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:22:21,392 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:22:21,403 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
-2024-03-12 19:22:21,414 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 19:22:21,424 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:22:21,425 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
-2024-03-12 19:22:21,425 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:22:21,429 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 19:22:21,429 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
-2024-03-12 19:22:21,430 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
-2024-03-12 19:22:21,439 INFO  [Thread-81] PipelineSqlMapDao:443 - Loading pipeline history to cache...Started
-2024-03-12 19:22:21,439 INFO  [Thread-80] PipelineSqlMapDao:434 - Loading Active Pipelines to cache...Started
-2024-03-12 19:22:21,439 INFO  [WrapperJarAppMain] MaterialRepository:234 - Loading PMRs,Remaining 1 Pipelines (Total: 1)...
-2024-03-12 19:22:21,440 INFO  [Thread-80] PipelineSqlMapDao:437 - Loading Active Pipelines to cache...Done
-2024-03-12 19:22:21,440 INFO  [Thread-81] PipelineSqlMapDao:447 - Loading pipeline history to cache...Done
-2024-03-12 19:22:21,443 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:22:21,446 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:22:21,449 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:22:21,461 INFO  [WrapperJarAppMain] MaterialRepository:309 - Loading modifications, Remaining 1 PMRs(Total: 1)...
-2024-03-12 19:22:21,469 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
-2024-03-12 19:22:21,493 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '0' building jobs. Added them with '2024-03-12T19:22:21.470Z' as the last heard time
-2024-03-12 19:22:21,503 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
-2024-03-12 19:22:21,508 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
-2024-03-12 19:22:21,546 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:22:21,721 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:22:21,725 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:22:22,002 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:22:22,005 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:22:22,024 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
-2024-03-12 19:22:22,024 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:22:22,024 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
-2024-03-12 19:22:22,024 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:22:22,045 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:22:22,048 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:22:22,080 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:22:22,081 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
-2024-03-12 19:22:22,081 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:22:22,081 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:22:27,941 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
-2024-03-12 19:22:33,450 INFO  [ThreadPoolTaskScheduler-4] GoFileConfigDataSource:137 - Config file changed at 1710271341338
-2024-03-12 19:22:33,450 INFO  [ThreadPoolTaskScheduler-4] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
-2024-03-12 19:22:33,482 INFO  [ThreadPoolTaskScheduler-4] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:22:33,485 INFO  [ThreadPoolTaskScheduler-4] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:22:33,485 INFO  [ThreadPoolTaskScheduler-4] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:23:16,623 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975]] at location [/go] asked for a new cookie, assigned [fb1caabc-47d9-4705-864a-514a3a05847b]
-2024-03-12 19:23:17,039 WARN  [qtp1960840833-32] AgentService:230 - Agent with UUID [52767143-766f-4884-8519-3cb5718ed975] changed IP Address from [172.30.0.3] to [172.31.0.2]
-2024-03-12 19:23:55,946 INFO  [qtp1960840833-33] ServerVersionInfoManager:71 - [Go Update Check] Starting update check at: Tue Mar 12 19:23:55 GMT 2024
-2024-03-12 19:23:56,774 ERROR [qtp1960840833-25] Rails:-2 -   
-2024-03-12 19:23:56,774 ERROR [qtp1960840833-25] Rails:-2 - Errno::ENOENT (No such file or directory - config/go_update_server.pub):
-2024-03-12 19:23:56,774 ERROR [qtp1960840833-25] Rails:-2 -   
-2024-03-12 19:23:56,774 ERROR [qtp1960840833-25] Rails:-2 - app/models/api_v1/go_latest_version.rb:42:in `signing_public_key_tampered?'
-app/models/api_v1/go_latest_version.rb:28:in `valid?'
-app/controllers/api_v1/version_infos_controller.rb:23:in `update_server'
-2024-03-12 19:24:16,534 ERROR [qtp1960840833-25] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/go-gocd-demo/general (check you haven't done anything to the response (ie, written to it) before here)
-2024-03-12 19:24:52,115 INFO  [qtp1960840833-34] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@3d8c0d51[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@6491bf8a
-2024-03-12 19:24:52,118 INFO  [qtp1960840833-34] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@3d8c0d51[displayName=anonymous,username=anonymous] is being processed
-2024-03-12 19:24:52,125 INFO  [qtp1960840833-34] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
-2024-03-12 19:24:52,134 INFO  [qtp1960840833-34] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
-2024-03-12 19:24:52,168 INFO  [qtp1960840833-34] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
-2024-03-12 19:24:52,171 INFO  [qtp1960840833-34] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline go-gocd-demo.
-2024-03-12 19:24:52,175 INFO  [qtp1960840833-34] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
-2024-03-12 19:24:52,175 INFO  [qtp1960840833-34] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@3d8c0d51[displayName=anonymous,username=anonymous] is completed
-2024-03-12 19:25:39,078 INFO  [128@MessageListener for MaterialUpdateListener] ScmMaterialUpdater:60 - [Material Update] Found '1' modifications for material 'GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false}' with flyweight 'c9d10db48663b508409c377dbef7ba3ad91c28c3905370863387105865b36947' using working directory '/go-working-dir/pipelines/flyweight/f647cab2-5df6-4e94-8361-50c7d1affa18'
-2024-03-12 19:25:48,485 INFO  [ThreadPoolTaskScheduler-6] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline go-gocd-demo with build cause [ModificationBuildCause: modified by L0G1C06 <justgithub70@gmail.com>]
-2024-03-12 19:25:48,508 INFO  [ThreadPoolTaskScheduler-6] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 19:25:48,514 INFO  [ThreadPoolTaskScheduler-6] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 19:25:56,775 INFO  [110@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 4, 4, test, 1, run-test, 65]] to agent [Agent [8e37088f9e8b, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 19:26:06,829 INFO  [qtp1960840833-25] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status [Preparing] for [Build [go-gocd-demo/4/test/1/run-test/65]]
-2024-03-12 19:26:08,095 INFO  [qtp1960840833-42] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status [Building] for [Build [go-gocd-demo/4/test/1/run-test/65]]
-2024-03-12 19:26:08,370 INFO  [qtp1960840833-34] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting result [Passed] for [Build [go-gocd-demo/4/test/1/run-test/65]]
-2024-03-12 19:26:08,386 INFO  [qtp1960840833-37] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status [Completing] for [Build [go-gocd-demo/4/test/1/run-test/65]]
-2024-03-12 19:26:08,401 INFO  [qtp1960840833-33] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status and result [Completed, Passed] for [Build [go-gocd-demo/4/test/1/run-test/65]]
-2024-03-12 19:26:08,411 INFO  [qtp1960840833-33] Stage:234 - Stage is being completed by transition id: 70
-2024-03-12 19:26:08,425 INFO  [qtp1960840833-33] ScheduleService:228 - [Stage Schedule] Scheduling stage python-api for pipeline go-gocd-demo
-2024-03-12 19:26:18,446 INFO  [110@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 4, 4, python-api, 1, deploy-api, 66]] to agent [Agent [8e37088f9e8b, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 19:26:28,461 INFO  [qtp1960840833-33] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status [Preparing] for [Build [go-gocd-demo/4/python-api/1/deploy-api/66]]
-2024-03-12 19:26:29,046 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status [Building] for [Build [go-gocd-demo/4/python-api/1/deploy-api/66]]
-2024-03-12 19:26:29,063 INFO  [qtp1960840833-25] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting result [Failed] for [Build [go-gocd-demo/4/python-api/1/deploy-api/66]]
-2024-03-12 19:26:29,077 INFO  [qtp1960840833-34] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status [Completing] for [Build [go-gocd-demo/4/python-api/1/deploy-api/66]]
-2024-03-12 19:26:29,090 INFO  [qtp1960840833-42] BuildRepositoryRemoteImpl:96 - [Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975, fb1caabc-47d9-4705-864a-514a3a05847b]] is reporting status and result [Completed, Failed] for [Build [go-gocd-demo/4/python-api/1/deploy-api/66]]
-2024-03-12 19:26:29,094 INFO  [qtp1960840833-42] Stage:234 - Stage is being completed by transition id: 76
-2024-03-12 19:30:01,949 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
-2024-03-12 19:30:01,971 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
-2024-03-12 19:30:01,971 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
-2024-03-12 19:30:02,037 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@495fd7a5{STOPPED}
-2024-03-12 19:30:04,082 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:30:04,082 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:30:04,084 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@29e97090. This might take a while depending on the size of the database.
-2024-03-12 19:30:04,086 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:30:04,086 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
-2024-03-12 19:30:04,086 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:30:04,129 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:30:06,256 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:30:06,257 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:30:06,298 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:30:06,315 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:30:06,329 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:30:06,332 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
-2024-03-12 19:30:06,332 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
-2024-03-12 19:30:06,347 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:30:06,347 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:30:06,348 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
-2024-03-12 19:30:06,348 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:30:06,384 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:30:06,385 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:30:06,394 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:30:06,396 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:30:06,415 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 19:30:06,417 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 19:30:06,417 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
-2024-03-12 19:30:07,049 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2024-03-12 19:30:07,098 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
-2024-03-12 19:30:07,116 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
-2024-03-12 19:30:07,148 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
-2024-03-12 19:30:07,152 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
-2024-03-12 19:30:07,159 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
-2024-03-12 19:30:07,166 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
-2024-03-12 19:30:07,170 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
-2024-03-12 19:30:07,187 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
-2024-03-12 19:30:07,217 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
-2024-03-12 19:30:07,220 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
-2024-03-12 19:30:08,867 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
-2024-03-12 19:30:09,635 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:30:09,668 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 136 to version 136
-2024-03-12 19:30:09,681 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
-2024-03-12 19:30:09,681 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
-2024-03-12 19:30:09,795 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:30:09,796 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:30:09,816 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:30:09,817 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
-2024-03-12 19:30:09,817 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:30:09,817 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:30:09,820 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:30:09,867 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:30:09,884 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
-2024-03-12 19:30:09,886 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:30:09,886 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
-2024-03-12 19:30:09,886 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:30:09,896 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 19:30:09,923 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 19:30:09,924 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:30:09,925 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
-2024-03-12 19:30:09,925 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
-2024-03-12 19:30:09,928 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:30:09,932 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:30:09,940 INFO  [Thread-81] PipelineSqlMapDao:443 - Loading pipeline history to cache...Started
-2024-03-12 19:30:09,940 INFO  [WrapperJarAppMain] MaterialRepository:234 - Loading PMRs,Remaining 1 Pipelines (Total: 1)...
-2024-03-12 19:30:09,940 INFO  [Thread-80] PipelineSqlMapDao:434 - Loading Active Pipelines to cache...Started
-2024-03-12 19:30:09,942 INFO  [Thread-80] PipelineSqlMapDao:437 - Loading Active Pipelines to cache...Done
-2024-03-12 19:30:09,944 INFO  [Thread-81] PipelineSqlMapDao:447 - Loading pipeline history to cache...Done
-2024-03-12 19:30:09,974 INFO  [WrapperJarAppMain] MaterialRepository:309 - Loading modifications, Remaining 1 PMRs(Total: 1)...
-2024-03-12 19:30:09,998 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
-2024-03-12 19:30:10,032 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '0' building jobs. Added them with '2024-03-12T19:30:09.999Z' as the last heard time
-2024-03-12 19:30:10,046 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
-2024-03-12 19:30:10,052 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
-2024-03-12 19:30:10,108 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:30:10,280 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:30:10,286 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:30:10,760 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:30:10,766 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:30:10,802 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
-2024-03-12 19:30:10,803 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:30:10,803 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
-2024-03-12 19:30:10,803 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:30:10,843 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:30:10,848 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:30:10,906 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:30:10,906 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
-2024-03-12 19:30:10,906 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:30:10,906 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:30:17,012 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
-2024-03-12 19:30:22,478 INFO  [ThreadPoolTaskScheduler-10] GoFileConfigDataSource:137 - Config file changed at 1710271809780
-2024-03-12 19:30:22,479 INFO  [ThreadPoolTaskScheduler-10] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
-2024-03-12 19:30:22,514 INFO  [ThreadPoolTaskScheduler-10] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:30:22,518 INFO  [ThreadPoolTaskScheduler-10] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:30:22,518 INFO  [ThreadPoolTaskScheduler-10] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:30:27,504 INFO  [ThreadPoolTaskScheduler-8] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:31:04,568 INFO  [qtp1960840833-35] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975]] at location [/go] asked for a new cookie, assigned [ddad6d25-46a0-4525-89a3-8d950cbcfe86]
-2024-03-12 19:31:05,010 WARN  [qtp1960840833-35] AgentService:230 - Agent with UUID [52767143-766f-4884-8519-3cb5718ed975] changed IP Address from [172.31.0.2] to [192.168.0.3]
-2024-03-12 19:45:37,338 INFO  [qtp1960840833-40] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'go-gocd-demo' requested by anonymous
-2024-03-12 19:45:37,339 INFO  [qtp1960840833-40] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'go-gocd-demo' accepted for user anonymous
-2024-03-12 19:45:37,341 INFO  [qtp1960840833-40] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'go-gocd-demo' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@6ae7d04d[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 19:45:37 GMT 2024]'
-2024-03-12 19:45:38,647 INFO  [ThreadPoolTaskScheduler-9] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline go-gocd-demo with build cause [ManualForcedBuildCause: Forced by anonymous]
-2024-03-12 19:45:38,672 INFO  [ThreadPoolTaskScheduler-9] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 19:45:38,677 INFO  [ThreadPoolTaskScheduler-9] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 19:45:45,169 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 5, 5, test, 1, run-test, 97]] to agent [Agent [8e37088f9e8b, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 19:45:55,222 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status [Preparing] for [Build [go-gocd-demo/5/test/1/run-test/97]]
-2024-03-12 19:45:56,435 INFO  [qtp1960840833-33] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status [Building] for [Build [go-gocd-demo/5/test/1/run-test/97]]
-2024-03-12 19:45:56,695 INFO  [qtp1960840833-34] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting result [Passed] for [Build [go-gocd-demo/5/test/1/run-test/97]]
-2024-03-12 19:45:56,713 INFO  [qtp1960840833-25] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status [Completing] for [Build [go-gocd-demo/5/test/1/run-test/97]]
-2024-03-12 19:45:56,736 INFO  [qtp1960840833-25] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status and result [Completed, Passed] for [Build [go-gocd-demo/5/test/1/run-test/97]]
-2024-03-12 19:45:56,741 INFO  [qtp1960840833-25] Stage:234 - Stage is being completed by transition id: 102
-2024-03-12 19:45:56,751 INFO  [qtp1960840833-25] ScheduleService:228 - [Stage Schedule] Scheduling stage python-api for pipeline go-gocd-demo
-2024-03-12 19:46:06,770 INFO  [109@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 5, 5, python-api, 1, deploy-api, 98]] to agent [Agent [8e37088f9e8b, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 19:46:16,781 INFO  [qtp1960840833-33] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status [Preparing] for [Build [go-gocd-demo/5/python-api/1/deploy-api/98]]
-2024-03-12 19:46:17,548 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status [Building] for [Build [go-gocd-demo/5/python-api/1/deploy-api/98]]
-2024-03-12 19:46:17,562 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting result [Failed] for [Build [go-gocd-demo/5/python-api/1/deploy-api/98]]
-2024-03-12 19:46:17,579 INFO  [qtp1960840833-34] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status [Completing] for [Build [go-gocd-demo/5/python-api/1/deploy-api/98]]
-2024-03-12 19:46:17,592 INFO  [qtp1960840833-43] BuildRepositoryRemoteImpl:96 - [Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975, ddad6d25-46a0-4525-89a3-8d950cbcfe86]] is reporting status and result [Completed, Failed] for [Build [go-gocd-demo/5/python-api/1/deploy-api/98]]
-2024-03-12 19:46:17,600 INFO  [qtp1960840833-43] Stage:234 - Stage is being completed by transition id: 108
-2024-03-12 19:54:03,124 ERROR [qtp1960840833-35] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/go-gocd-demo/general (check you haven't done anything to the response (ie, written to it) before here)
-2024-03-12 19:54:20,491 INFO  [qtp1960840833-34] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@73225994[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@69e930a0
-2024-03-12 19:54:20,491 INFO  [qtp1960840833-34] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@73225994[displayName=anonymous,username=anonymous] is being processed
-2024-03-12 19:54:20,499 INFO  [qtp1960840833-34] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
-2024-03-12 19:54:20,511 INFO  [qtp1960840833-34] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
-2024-03-12 19:54:20,549 INFO  [qtp1960840833-34] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
-2024-03-12 19:54:20,551 INFO  [qtp1960840833-34] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline go-gocd-demo.
-2024-03-12 19:54:20,552 INFO  [qtp1960840833-34] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
-2024-03-12 19:54:20,552 INFO  [qtp1960840833-34] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@73225994[displayName=anonymous,username=anonymous] is completed
-2024-03-12 19:54:49,933 INFO  [WrapperJarAppMain] Jetty9Server:220 - Configuring Jetty using /go-working-dir/config/jetty.xml
-2024-03-12 19:54:49,975 INFO  [WrapperJarAppMain] GoServer:89 - Including addons: 
-2024-03-12 19:54:49,976 WARN  [WrapperJarAppMain] Server:341 - ErrorPageMapper not supported for Server level Error Handling
-2024-03-12 19:54:50,129 WARN  [WrapperJarAppMain] AbstractHandler:96 - No Server set for ResourceHandler@495fd7a5{STOPPED}
-2024-03-12 19:54:52,531 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:54:52,532 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=FALSE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:54:52,533 INFO  [WrapperJarAppMain] DbDeployMigration:51 - Upgrading database at org.apache.commons.dbcp2.BasicDataSource@4ea5c6c0. This might take a while depending on the size of the database.
-2024-03-12 19:54:52,534 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:54:52,535 INFO  [WrapperJarAppMain] DbDeployMigration:60 - WARNING: Shutting down your server at this point will lead to a database corruption. Please wait until the database upgrade completes.
-2024-03-12 19:54:52,535 INFO  [WrapperJarAppMain] DbDeployMigration:60 - ************************************************************************
-2024-03-12 19:54:52,557 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:54:54,687 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:54:54,688 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:54:54,741 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:54:54,753 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:54:54,766 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:54:54,768 INFO  [WrapperJarAppMain] DbDeployMigration:71 - Database upgrade completed.
-2024-03-12 19:54:54,768 INFO  [WrapperJarAppMain] H2EventListener:82 - Closing database
-2024-03-12 19:54:54,782 INFO  [WrapperJarAppMain] H2Database:121 - [db] Using connection configuration jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener' [User: sa]
-2024-03-12 19:54:54,782 INFO  [WrapperJarAppMain] H2Database:111 - Creating data source with url=jdbc:h2:/go-working-dir/db/h2db/cruise;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MVCC=TRUE;CACHE_SIZE=131072;TRACE_LEVEL_FILE=1;TRACE_MAX_FILE_SIZE=16;DATABASE_EVENT_LISTENER='com.thoughtworks.go.server.util.H2EventListener'
-2024-03-12 19:54:54,782 INFO  [WrapperJarAppMain] DataMigrationRunner:35 - Running data migrations...
-2024-03-12 19:54:54,783 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:54:54,819 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:54:54,819 INFO  [WrapperJarAppMain] H2EventListener:87 - Creating index SYS:SYS_ID 0%
-2024-03-12 19:54:54,831 INFO  [WrapperJarAppMain] H2EventListener:36 - Database is opened
-2024-03-12 19:54:54,833 INFO  [WrapperJarAppMain] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:54:54,861 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 1 ms
-2024-03-12 19:54:54,863 INFO  [WrapperJarAppMain] DataMigrationRunner:52 - Data migration took 0 ms
-2024-03-12 19:54:54,863 INFO  [WrapperJarAppMain] DataMigrationRunner:42 - Data migrations completed.
-2024-03-12 19:54:55,691 WARN  [WrapperJarAppMain] ConfigurationFactory:136 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/lib/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2024-03-12 19:54:55,723 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.AccessToken]; using defaults.
-2024-03-12 19:54:55,742 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.NotificationFilter]; using defaults.
-2024-03-12 19:54:55,779 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.UsageStatisticsReporting]; using defaults.
-2024-03-12 19:54:55,782 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User]; using defaults.
-2024-03-12 19:54:55,787 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.server.domain.DataSharingSettings]; using defaults.
-2024-03-12 19:54:55,796 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.Plugin]; using defaults.
-2024-03-12 19:54:55,800 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.EnvironmentVariable]; using defaults.
-2024-03-12 19:54:55,818 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [com.thoughtworks.go.domain.User.notificationFilters]; using defaults.
-2024-03-12 19:54:55,851 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
-2024-03-12 19:54:55,856 WARN  [WrapperJarAppMain] EhCacheProvider:93 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
-2024-03-12 19:54:57,930 WARN  [WrapperJarAppMain] FeatureToggleRepository:69 - Toggles file, /go-working-dir/config/go.feature.toggles does not exist. Saying there are no toggles.
-2024-03-12 19:54:59,075 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:54:59,108 INFO  [WrapperJarAppMain] GoConfigMigration:93 - Upgrading config file from version 136 to version 136
-2024-03-12 19:54:59,138 INFO  [WrapperJarAppMain] GoConfigMigration:101 - Finished upgrading config file
-2024-03-12 19:54:59,139 INFO  [WrapperJarAppMain] GoConfigMigrator:106 - [Config Save] Starting Config Save post upgrade using FullConfigSaveNormalFlow
-2024-03-12 19:54:59,274 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.ldap. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:54:59,274 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.ldap - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'This is an invalid request type :go.plugin-settings.get-configuration''}]
-2024-03-12 19:54:59,274 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:54:59,275 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-ldap-authentication-plugin.jar
-2024-03-12 19:54:59,281 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:54:59,347 INFO  [WrapperJarAppMain] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:54:59,347 INFO  [WrapperJarAppMain] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:54:59,387 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:54:59,387 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: yum - Metadata load info: [{extension='package-repository', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '400' and the following response: 'Invalid request name go.plugin-settings.get-configuration''}]
-2024-03-12 19:54:59,387 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:54:59,421 INFO  [WrapperJarAppMain] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:54:59,423 ERROR [Thread-78] PluginInfoBuilder:54 - Failed to fetch Plugin Settings metadata for plugin yum. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:54:59,428 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yum-repository-poller-plugin.jar
-2024-03-12 19:54:59,433 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:54:59,439 INFO  [WrapperJarAppMain] InvalidateAuthenticationOnSecurityConfigChangeFilter:78 - [Configuration Changed] Security Configuration is changed. Updating the last changed time.
-2024-03-12 19:54:59,451 INFO  [WrapperJarAppMain] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 19:54:59,469 INFO  [WrapperJarAppMain] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 19:54:59,470 INFO  [WrapperJarAppMain] PipelineSqlMapDao:135 - Loading active pipelines into memory.
-2024-03-12 19:54:59,470 INFO  [WrapperJarAppMain] PipelineSqlMapDao:402 - Retriving Active Pipelines from Database...
-2024-03-12 19:54:59,484 INFO  [Thread-81] PipelineSqlMapDao:443 - Loading pipeline history to cache...Started
-2024-03-12 19:54:59,484 INFO  [Thread-80] PipelineSqlMapDao:434 - Loading Active Pipelines to cache...Started
-2024-03-12 19:54:59,484 INFO  [WrapperJarAppMain] MaterialRepository:234 - Loading PMRs,Remaining 1 Pipelines (Total: 1)...
-2024-03-12 19:54:59,485 INFO  [Thread-81] PipelineSqlMapDao:447 - Loading pipeline history to cache...Done
-2024-03-12 19:54:59,485 INFO  [Thread-80] PipelineSqlMapDao:437 - Loading Active Pipelines to cache...Done
-2024-03-12 19:54:59,506 INFO  [WrapperJarAppMain] MaterialRepository:309 - Loading modifications, Remaining 1 PMRs(Total: 1)...
-2024-03-12 19:54:59,513 INFO  [WrapperJarAppMain] PipelineSqlMapDao:137 - Done loading active pipelines into memory.
-2024-03-12 19:54:59,537 INFO  [WrapperJarAppMain] ConsoleActivityMonitor:67 - Found '0' building jobs. Added them with '2024-03-12T19:54:59.514Z' as the last heard time
-2024-03-12 19:54:59,549 INFO  [WrapperJarAppMain] RailsAssetsService:68 - Found rails assets manifest file named .sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json 
-2024-03-12 19:54:59,553 INFO  [WrapperJarAppMain] RailsAssetsService:72 - Successfully read rails assets manifest file located at /go-working-dir/work/jetty-0_0_0_0-8153-cruise_war-_go-any-/webapp/WEB-INF/rails/public/assets/.sprockets-manifest-a6a76f03ec4cd8f2081b9b93ba428cec.json
-2024-03-12 19:54:59,593 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:54:59,728 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-json-config-plugin.jar
-2024-03-12 19:54:59,733 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:55:00,078 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-yaml-config-plugin.jar
-2024-03-12 19:55:00,082 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:55:00,105 ERROR [Thread-78] DefaultPluginManager:136 - This is an invalid request type :go.plugin-settings.get-configuration
-2024-03-12 19:55:00,105 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.secrets.file-based-plugin. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:55:00,105 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.secrets.file-based-plugin - Metadata load info: [{extension='secrets', configuration='null', view='null', error='com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException: This is an invalid request type :go.plugin-settings.get-configuration'}]
-2024-03-12 19:55:00,106 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:55:00,124 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-file-based-secrets-plugin.jar
-2024-03-12 19:55:00,126 INFO  [Thread-78] DefaultPluginJarChangeListener:67 - Plugin load starting: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:55:00,167 WARN  [Thread-78] PluginSettingsMetadataLoader:63 - Failed to fetch plugin settings metadata for plugin cd.go.authentication.passwordfile. Maybe the plugin does not implement plugin settings and view?
-2024-03-12 19:55:00,167 WARN  [Thread-78] PluginSettingsMetadataLoader:64 - Plugin: cd.go.authentication.passwordfile - Metadata load info: [{extension='authorization', configuration='null', view='null', error='The plugin sent a response that could not be understood by Go. Plugin returned with code '500' and the following response: 'Request go.plugin-settings.get-configuration is not supported by plugin.''}]
-2024-03-12 19:55:00,167 WARN  [Thread-78] PluginSettingsMetadataLoader:65 - Not all plugins are required to implement the request above. This error may be safe to ignore.
-2024-03-12 19:55:00,167 INFO  [Thread-78] DefaultPluginJarChangeListener:74 - Plugin load finished: /go-working-dir/plugins/bundled/gocd-filebased-authentication-plugin.jar
-2024-03-12 19:55:07,263 WARN  [WrapperJarAppMain] DeprecationWarning:43 - Using @Deprecated Class com.thoughtworks.go.server.web.DefaultHeadersFilter
-2024-03-12 19:55:12,879 INFO  [ThreadPoolTaskScheduler-2] GoFileConfigDataSource:137 - Config file changed at 1710273299331
-2024-03-12 19:55:12,879 INFO  [ThreadPoolTaskScheduler-2] GoFileConfigDataSource:138 - Reloading config file: config/cruise-config.xml
-2024-03-12 19:55:12,907 INFO  [ThreadPoolTaskScheduler-2] CachedGoConfig:222 - About to notify config listeners
-2024-03-12 19:55:12,910 INFO  [ThreadPoolTaskScheduler-2] BuildAssignmentService:238 - [Configuration Changed] Removing jobs for pipelines that no longer exist in configuration.
-2024-03-12 19:55:12,911 INFO  [ThreadPoolTaskScheduler-2] CachedGoConfig:230 - Finished notifying all listeners
-2024-03-12 19:55:17,903 INFO  [112@MessageListener for ScheduleCheckListener] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
-2024-03-12 19:55:42,249 INFO  [qtp1960840833-41] ServerVersionInfoManager:71 - [Go Update Check] Starting update check at: Tue Mar 12 19:55:42 GMT 2024
-2024-03-12 19:55:42,863 ERROR [qtp1960840833-42] Rails:-2 -   
-2024-03-12 19:55:42,863 ERROR [qtp1960840833-42] Rails:-2 - Errno::ENOENT (No such file or directory - config/go_update_server.pub):
-2024-03-12 19:55:42,863 ERROR [qtp1960840833-42] Rails:-2 -   
-2024-03-12 19:55:42,864 ERROR [qtp1960840833-42] Rails:-2 - app/models/api_v1/go_latest_version.rb:42:in `signing_public_key_tampered?'
-app/models/api_v1/go_latest_version.rb:28:in `valid?'
-app/controllers/api_v1/version_infos_controller.rb:23:in `update_server'
-2024-03-12 19:55:51,722 INFO  [qtp1960840833-37] PipelineTriggerService:43 - [Pipeline Schedule] [Requested] Manual trigger of pipeline 'go-gocd-demo' requested by anonymous
-2024-03-12 19:55:51,723 INFO  [qtp1960840833-37] PipelineTriggerService:46 - [Pipeline Schedule] [Accepted] Manual trigger of pipeline 'go-gocd-demo' accepted for user anonymous
-2024-03-12 19:55:51,726 INFO  [qtp1960840833-37] PipelineTriggerService:48 - [Pipeline Schedule] [Processed] Manual trigger of pipeline 'go-gocd-demo' processed with result 'com.thoughtworks.go.serverhealth.ServerHealthState@11ebbde6[healthStateLevel=OK,type=<HealthStateType ARTIFACTS_DISK_FULL LogScope[GLOBAL, scope=GLOBAL]>,message=,description=,expiryTime=<null>,timestamp=Tue Mar 12 19:55:51 GMT 2024]'
-2024-03-12 19:55:52,885 INFO  [ThreadPoolTaskScheduler-10] ScheduleService:160 - [Pipeline Schedule] Scheduling pipeline go-gocd-demo with build cause [ManualForcedBuildCause: Forced by anonymous]
-2024-03-12 19:55:52,916 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975]] at location [/go] asked for a new cookie, assigned [78968fb8-04ab-48bf-90ca-a5b0415bff70]
-2024-03-12 19:55:52,922 INFO  [ThreadPoolTaskScheduler-10] PipelineRepository:78 - Start updating pipeline timeline
-2024-03-12 19:55:52,928 INFO  [ThreadPoolTaskScheduler-10] PipelineRepository:84 - Pipeline timeline updated
-2024-03-12 19:55:53,362 WARN  [qtp1960840833-32] AgentService:230 - Agent with UUID [52767143-766f-4884-8519-3cb5718ed975] changed IP Address from [192.168.0.3] to [192.168.16.3]
-2024-03-12 19:56:02,962 INFO  [110@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 6, 6, test, 1, run-test, 129]] to agent [Agent [8e37088f9e8b, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 19:56:13,037 INFO  [qtp1960840833-35] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status [Preparing] for [Build [go-gocd-demo/6/test/1/run-test/129]]
-2024-03-12 19:56:14,146 INFO  [qtp1960840833-31] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status [Building] for [Build [go-gocd-demo/6/test/1/run-test/129]]
-2024-03-12 19:56:14,500 INFO  [qtp1960840833-33] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting result [Passed] for [Build [go-gocd-demo/6/test/1/run-test/129]]
-2024-03-12 19:56:14,527 INFO  [qtp1960840833-41] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status [Completing] for [Build [go-gocd-demo/6/test/1/run-test/129]]
-2024-03-12 19:56:14,548 INFO  [qtp1960840833-37] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status and result [Completed, Passed] for [Build [go-gocd-demo/6/test/1/run-test/129]]
-2024-03-12 19:56:14,562 INFO  [qtp1960840833-37] Stage:234 - Stage is being completed by transition id: 134
-2024-03-12 19:56:14,580 INFO  [qtp1960840833-37] ScheduleService:228 - [Stage Schedule] Scheduling stage python-api for pipeline go-gocd-demo
-2024-03-12 19:56:24,606 INFO  [110@MessageListener for WorkFinder] BuildAssignmentService:186 - [Agent Assignment] Assigned job [JobIdentifier[go-gocd-demo, 6, 6, python-api, 1, deploy-api, 130]] to agent [Agent [8e37088f9e8b, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975]]
-2024-03-12 19:56:34,624 INFO  [qtp1960840833-40] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status [Preparing] for [Build [go-gocd-demo/6/python-api/1/deploy-api/130]]
-2024-03-12 19:56:35,116 INFO  [qtp1960840833-34] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status [Building] for [Build [go-gocd-demo/6/python-api/1/deploy-api/130]]
-2024-03-12 19:56:35,131 INFO  [qtp1960840833-31] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting result [Failed] for [Build [go-gocd-demo/6/python-api/1/deploy-api/130]]
-2024-03-12 19:56:35,148 INFO  [qtp1960840833-33] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status [Completing] for [Build [go-gocd-demo/6/python-api/1/deploy-api/130]]
-2024-03-12 19:56:35,158 INFO  [qtp1960840833-32] BuildRepositoryRemoteImpl:96 - [Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975, 78968fb8-04ab-48bf-90ca-a5b0415bff70]] is reporting status and result [Completed, Failed] for [Build [go-gocd-demo/6/python-api/1/deploy-api/130]]
-2024-03-12 19:56:35,165 INFO  [qtp1960840833-32] Stage:234 - Stage is being completed by transition id: 140
+2024-03-12 22:23:08,461 ERROR [qtp1417842416-32] VariableReplacer:385 - function ${escape:} type 'escape:' not a valid type
+2024-03-12 22:23:08,480 INFO  [qtp1417842416-32] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@7c70a9f9[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.CreatePipelineConfigCommand@58fcc2af
+2024-03-12 22:23:08,484 INFO  [qtp1417842416-32] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@7c70a9f9[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:23:08,502 INFO  [qtp1417842416-32] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:23:08,513 INFO  [qtp1417842416-32] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:23:08,523 INFO  [qtp1417842416-32] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:23:08,527 INFO  [qtp1417842416-32] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:23:08,530 INFO  [qtp1417842416-32] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:23:08,531 INFO  [qtp1417842416-32] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@7c70a9f9[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:23:08,533 INFO  [Dashboard-Queue-Processor] H2EventListener:31 - Initializing database: jdbc:h2:/go-working-dir/db/h2db/cruise
+2024-03-12 22:23:08,537 INFO  [qtp1417842416-32] PipelinePauseService:131 - [Pipeline Pause] Pipeline [multi-agents] is paused by [com.thoughtworks.go.server.domain.Username@7c70a9f9[displayName=anonymous,username=anonymous]] because [Under construction]
+2024-03-12 22:23:08,562 ERROR [qtp1417842416-34] RewrittenUrl:385 - response is comitted cannot forward to /rails/admin/pipelines/multi-agents/general (check you haven't done anything to the response (ie, written to it) before here)
+2024-03-12 22:24:04,719 WARN  [ThreadPoolTaskScheduler-10] MaterialUpdateService:188 - [Material Update] Skipping update of material GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false} which has been in-progress since Tue Mar 12 22:23:34 GMT 2024
+2024-03-12 22:24:10,153 INFO  [125@MessageListener for MaterialUpdateListener] ScmMaterialUpdater:60 - [Material Update] Found '1' modifications for material 'GitMaterial{url=https://github.com/L0G1C06/gocd_study, branch='main', submoduleFolder='null', shallowClone=false}' with flyweight 'c9d10db48663b508409c377dbef7ba3ad91c28c3905370863387105865b36947' using working directory '/go-working-dir/pipelines/flyweight/70425873-32e6-4baa-8000-5c9858a77483'
+2024-03-12 22:26:18,107 INFO  [qtp1417842416-36] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@52ecf010[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@49eae40b
+2024-03-12 22:26:18,107 INFO  [qtp1417842416-36] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@52ecf010[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:26:18,112 INFO  [qtp1417842416-36] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:26:18,127 INFO  [qtp1417842416-36] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:26:18,135 INFO  [qtp1417842416-36] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:26:18,137 INFO  [qtp1417842416-36] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:26:18,137 INFO  [qtp1417842416-36] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:26:18,137 INFO  [qtp1417842416-36] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@52ecf010[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:26:29,462 INFO  [qtp1417842416-27] GoConfigDao:87 - Config update for entity request by com.thoughtworks.go.server.domain.Username@113c0445[displayName=anonymous,username=anonymous] is in queue - com.thoughtworks.go.config.update.UpdatePipelineConfigCommand@428779a
+2024-03-12 22:26:29,463 INFO  [qtp1417842416-27] GoConfigDao:90 - Config update for entity request by com.thoughtworks.go.server.domain.Username@113c0445[displayName=anonymous,username=anonymous] is being processed
+2024-03-12 22:26:29,467 INFO  [qtp1417842416-27] GoFileConfigDataSource:274 - [Configuration Changed] Saving updated configuration.
+2024-03-12 22:26:29,478 INFO  [qtp1417842416-27] MagicalGoConfigXmlWriter:85 - [Serializing Config] Generating config partial.
+2024-03-12 22:26:29,483 INFO  [qtp1417842416-27] CachedGoConfig:166 - About to notify com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:26:29,485 INFO  [qtp1417842416-27] BuildAssignmentService:118 - [Configuration Changed] Removing deleted jobs for pipeline multi-agents.
+2024-03-12 22:26:29,486 INFO  [qtp1417842416-27] CachedGoConfig:180 - Finished notifying com.thoughtworks.go.config.PipelineConfig config listeners
+2024-03-12 22:26:29,486 INFO  [qtp1417842416-27] GoConfigDao:100 - Entity update for request by com.thoughtworks.go.server.domain.Username@113c0445[displayName=anonymous,username=anonymous] is completed
+2024-03-12 22:26:53,550 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [c6a85946387a, 172.23.0.3, a2e9f0cb-9b0a-4b51-82ba-c5fec16527b6]] at location [/go] asked for a new cookie, assigned [f3361b47-7343-464c-94dc-08d37499b315]
+2024-03-12 22:26:53,571 INFO  [qtp1417842416-31] BuildRepositoryRemoteImpl:122 - [Agent Cookie] Agent [Agent [d35db6b3a860, 172.23.0.2, ae12df90-0dd5-463b-aaf6-4caba5b8bba6]] at location [/go] asked for a new cookie, assigned [ff85e23f-dee3-493d-ba99-74a6a1d7ab65]
