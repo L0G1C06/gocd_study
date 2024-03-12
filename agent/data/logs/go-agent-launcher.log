@@ -206,3 +206,107 @@ Caused by: java.net.ConnectException: Connection refused
 2024-03-12 19:23:13,915 INFO  [WrapperJarAppMain] ServerBinaryDownloader:129 - Piped the stream to admin/tfs-impl.jar
 2024-03-12 19:23:13,915 INFO  [WrapperJarAppMain] PerfTimer:52 - Performance: Downloading new admin/tfs-impl.jar with md5 signature: 6274a2dda3d3a29a6d5661b8c0c945fb took 27ms
 2024-03-12 19:23:13,917 INFO  [WrapperJarAppMain] AgentProcessParentImpl:70 - Launching Agent with command: /gocd-jre/bin/java -Xms128m -Xmx256m -Dgo.console.stdout=true -Dgo.console.stdout=true -Dagent.plugins.md5=bc6f932acde5c026848b07923c3fd5d9 -Dagent.binary.md5=fa78cc0567df202d6d378e2a5fcfbd72 -Dagent.launcher.md5=82d341216393a4280053ec5e27cafae1 -Dagent.tfs.md5=6274a2dda3d3a29a6d5661b8c0c945fb -jar agent.jar -serverUrl http://gocdserver:8153/go -sslVerificationMode FULL
+2024-03-12 19:30:01,611 INFO  [TouchLoopThread-1] Lockfile:103 - Using lock file: /go/.agent-bootstrapper.running
+2024-03-12 19:30:01,812 ERROR [WrapperJarAppMain] ServerBinaryDownloader:88 - Couldn't update admin/agent-launcher.jar. Sleeping for 1m. Error: 
+org.apache.http.conn.HttpHostConnectException: Connect to gocdserver:8153 [gocdserver/192.168.0.2] failed: Connection refused
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:108)
+	at com.thoughtworks.go.agent.launcher.ServerBinaryDownloader.fetchUpdateCheckHeaders(ServerBinaryDownloader.java:104)
+	at com.thoughtworks.go.agent.launcher.ServerBinaryDownloader.downloadIfNecessary(ServerBinaryDownloader.java:80)
+	at com.thoughtworks.go.agent.launcher.AgentLauncherImpl.doLaunch(AgentLauncherImpl.java:91)
+	at com.thoughtworks.go.agent.launcher.AgentLauncherImpl.lambda$launch$0(AgentLauncherImpl.java:69)
+	at com.thoughtworks.go.logging.LogConfigurator.runWithLogger(LogConfigurator.java:62)
+	at com.thoughtworks.go.agent.launcher.AgentLauncherImpl.launch(AgentLauncherImpl.java:69)
+	at com.thoughtworks.go.agent.bootstrapper.AgentBootstrapper.go(AgentBootstrapper.java:76)
+	at com.thoughtworks.go.agent.bootstrapper.AgentBootstrapper.lambda$main$0(AgentBootstrapper.java:57)
+	at com.thoughtworks.go.logging.LogConfigurator.runWithLogger(LogConfigurator.java:53)
+	at com.thoughtworks.go.agent.bootstrapper.AgentBootstrapper.main(AgentBootstrapper.java:57)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.thoughtworks.gocd.Boot.run(Boot.java:90)
+	at com.thoughtworks.gocd.Boot.main(Boot.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.tanukisoftware.wrapper.WrapperJarApp.run(WrapperJarApp.java:451)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 31 common frames omitted
+2024-03-12 19:31:01,991 INFO  [WrapperJarAppMain] ServerBinaryDownloader:114 - Downloading agent.jar
+2024-03-12 19:31:02,000 INFO  [WrapperJarAppMain] ServerBinaryDownloader:121 - Got server response
+2024-03-12 19:31:02,049 INFO  [WrapperJarAppMain] ServerBinaryDownloader:129 - Piped the stream to admin/agent
+2024-03-12 19:31:02,050 INFO  [WrapperJarAppMain] PerfTimer:52 - Performance: Downloading new admin/agent with md5 signature: fa78cc0567df202d6d378e2a5fcfbd72 took 59ms
+2024-03-12 19:31:02,178 INFO  [WrapperJarAppMain] AgentProcessParentImpl:51 - Agent is version: 20.4.0-11749
+2024-03-12 19:31:02,240 INFO  [WrapperJarAppMain] ServerBinaryDownloader:114 - Downloading agent-plugins.zip
+2024-03-12 19:31:02,245 INFO  [WrapperJarAppMain] ServerBinaryDownloader:121 - Got server response
+2024-03-12 19:31:02,248 INFO  [WrapperJarAppMain] ServerBinaryDownloader:129 - Piped the stream to admin/agent-plugins.zip
+2024-03-12 19:31:02,248 INFO  [WrapperJarAppMain] PerfTimer:52 - Performance: Downloading new admin/agent-plugins.zip with md5 signature: 62d086812d538ff2a6d6a4a2b4edbf2a took 8ms
+2024-03-12 19:31:02,254 INFO  [WrapperJarAppMain] ServerBinaryDownloader:114 - Downloading tfs-impl.jar
+2024-03-12 19:31:02,259 INFO  [WrapperJarAppMain] ServerBinaryDownloader:121 - Got server response
+2024-03-12 19:31:02,282 INFO  [WrapperJarAppMain] ServerBinaryDownloader:129 - Piped the stream to admin/tfs-impl.jar
+2024-03-12 19:31:02,283 INFO  [WrapperJarAppMain] PerfTimer:52 - Performance: Downloading new admin/tfs-impl.jar with md5 signature: 6274a2dda3d3a29a6d5661b8c0c945fb took 29ms
+2024-03-12 19:31:02,284 INFO  [WrapperJarAppMain] AgentProcessParentImpl:70 - Launching Agent with command: /gocd-jre/bin/java -Xms128m -Xmx256m -Dgo.console.stdout=true -Dgo.console.stdout=true -Dagent.plugins.md5=62d086812d538ff2a6d6a4a2b4edbf2a -Dagent.binary.md5=fa78cc0567df202d6d378e2a5fcfbd72 -Dagent.launcher.md5=82d341216393a4280053ec5e27cafae1 -Dagent.tfs.md5=6274a2dda3d3a29a6d5661b8c0c945fb -jar agent.jar -serverUrl http://gocdserver:8153/go -sslVerificationMode FULL
+2024-03-12 19:54:49,774 INFO  [TouchLoopThread-1] Lockfile:103 - Using lock file: /go/.agent-bootstrapper.running
+2024-03-12 19:54:50,219 INFO  [WrapperJarAppMain] ServerBinaryDownloader:141 - Response code: 503
+2024-03-12 19:54:50,222 ERROR [WrapperJarAppMain] ServerBinaryDownloader:88 - Couldn't update admin/agent-launcher.jar. Sleeping for 1m. Error: 
+org.apache.http.client.ClientProtocolException: Problem accessing GoCD Server at http://gocdserver:8153/go/admin/agent-launcher.jar
+Possible causes:
+1. Your GoCD Server is down, not accessible or starting up.
+2. This agent might be incompatible with your GoCD Server. Please fix the version mismatch between GoCD Server and GoCD Agent.
+
+	at com.thoughtworks.go.agent.launcher.ServerBinaryDownloader.handleInvalidResponse(ServerBinaryDownloader.java:146)
+	at com.thoughtworks.go.agent.launcher.ServerBinaryDownloader.fetchUpdateCheckHeaders(ServerBinaryDownloader.java:106)
+	at com.thoughtworks.go.agent.launcher.ServerBinaryDownloader.downloadIfNecessary(ServerBinaryDownloader.java:80)
+	at com.thoughtworks.go.agent.launcher.AgentLauncherImpl.doLaunch(AgentLauncherImpl.java:91)
+	at com.thoughtworks.go.agent.launcher.AgentLauncherImpl.lambda$launch$0(AgentLauncherImpl.java:69)
+	at com.thoughtworks.go.logging.LogConfigurator.runWithLogger(LogConfigurator.java:62)
+	at com.thoughtworks.go.agent.launcher.AgentLauncherImpl.launch(AgentLauncherImpl.java:69)
+	at com.thoughtworks.go.agent.bootstrapper.AgentBootstrapper.go(AgentBootstrapper.java:76)
+	at com.thoughtworks.go.agent.bootstrapper.AgentBootstrapper.lambda$main$0(AgentBootstrapper.java:57)
+	at com.thoughtworks.go.logging.LogConfigurator.runWithLogger(LogConfigurator.java:53)
+	at com.thoughtworks.go.agent.bootstrapper.AgentBootstrapper.main(AgentBootstrapper.java:57)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.thoughtworks.gocd.Boot.run(Boot.java:90)
+	at com.thoughtworks.gocd.Boot.main(Boot.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.tanukisoftware.wrapper.WrapperJarApp.run(WrapperJarApp.java:451)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2024-03-12 19:55:50,288 INFO  [WrapperJarAppMain] ServerBinaryDownloader:114 - Downloading agent.jar
+2024-03-12 19:55:50,296 INFO  [WrapperJarAppMain] ServerBinaryDownloader:121 - Got server response
+2024-03-12 19:55:50,341 INFO  [WrapperJarAppMain] ServerBinaryDownloader:129 - Piped the stream to admin/agent
+2024-03-12 19:55:50,342 INFO  [WrapperJarAppMain] PerfTimer:52 - Performance: Downloading new admin/agent with md5 signature: fa78cc0567df202d6d378e2a5fcfbd72 took 54ms
+2024-03-12 19:55:50,478 INFO  [WrapperJarAppMain] AgentProcessParentImpl:51 - Agent is version: 20.4.0-11749
+2024-03-12 19:55:50,539 INFO  [WrapperJarAppMain] ServerBinaryDownloader:114 - Downloading agent-plugins.zip
+2024-03-12 19:55:50,544 INFO  [WrapperJarAppMain] ServerBinaryDownloader:121 - Got server response
+2024-03-12 19:55:50,547 INFO  [WrapperJarAppMain] ServerBinaryDownloader:129 - Piped the stream to admin/agent-plugins.zip
+2024-03-12 19:55:50,547 INFO  [WrapperJarAppMain] PerfTimer:52 - Performance: Downloading new admin/agent-plugins.zip with md5 signature: ae8b946848da1fbde2dfb21e48ae5903 took 8ms
+2024-03-12 19:55:50,552 INFO  [WrapperJarAppMain] ServerBinaryDownloader:114 - Downloading tfs-impl.jar
+2024-03-12 19:55:50,556 INFO  [WrapperJarAppMain] ServerBinaryDownloader:121 - Got server response
+2024-03-12 19:55:50,578 INFO  [WrapperJarAppMain] ServerBinaryDownloader:129 - Piped the stream to admin/tfs-impl.jar
+2024-03-12 19:55:50,578 INFO  [WrapperJarAppMain] PerfTimer:52 - Performance: Downloading new admin/tfs-impl.jar with md5 signature: 6274a2dda3d3a29a6d5661b8c0c945fb took 26ms
+2024-03-12 19:55:50,580 INFO  [WrapperJarAppMain] AgentProcessParentImpl:70 - Launching Agent with command: /gocd-jre/bin/java -Xms128m -Xmx256m -Dgo.console.stdout=true -Dgo.console.stdout=true -Dagent.plugins.md5=ae8b946848da1fbde2dfb21e48ae5903 -Dagent.binary.md5=fa78cc0567df202d6d378e2a5fcfbd72 -Dagent.launcher.md5=82d341216393a4280053ec5e27cafae1 -Dagent.tfs.md5=6274a2dda3d3a29a6d5661b8c0c945fb -jar agent.jar -serverUrl http://gocdserver:8153/go -sslVerificationMode FULL

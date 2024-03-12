@@ -11,5 +11,7 @@ services:
   gocdagent:
     build: ./agent
     image: "l0g1g06/gocdagent1"
+    ports:
+      - "8001:8001"
     volumes:
       - "./agent/data:/godata"

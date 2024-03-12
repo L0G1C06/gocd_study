@@ -147,3 +147,142 @@ Caused by: java.lang.RuntimeException: git fetch failed for [https://github.com/
 2024-03-12 19:23:15,830 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
 2024-03-12 19:23:16,567 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
 2024-03-12 19:23:16,629 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: fb1caabc-47d9-4705-864a-514a3a05847b
+2024-03-12 19:26:06,824 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:06,825 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/4/test/1/run-test/65]
+2024-03-12 19:26:08,093 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:08,093 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/4/test/1/run-test/65]
+2024-03-12 19:26:08,102 INFO  [scheduler-3] CommandLine:371 - Running command: go test
+2024-03-12 19:26:08,357 INFO  [Thread-32] CommandLine:51 - PASS
+2024-03-12 19:26:08,357 INFO  [Thread-32] CommandLine:51 - ok  	_/godata/pipelines/go-gocd-demo	0.002s
+2024-03-12 19:26:08,367 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:08,368 INFO  [scheduler-3] DefaultGoPublisher:94 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/4/test/1/run-test/65]
+2024-03-12 19:26:08,384 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:08,385 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/4/test/1/run-test/65]
+2024-03-12 19:26:08,392 INFO  [scheduler-3] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 19:26:08,393 INFO  [scheduler-3] DefaultGoPublisher:100 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/4/test/1/run-test/65]
+2024-03-12 19:26:08,398 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:08,434 INFO  [scheduler-3] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/4/test/1/run-test/65]
+2024-03-12 19:26:28,458 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:28,459 INFO  [scheduler-1] DefaultGoPublisher:88 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/4/python-api/1/deploy-api/66]
+2024-03-12 19:26:29,043 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:29,044 INFO  [scheduler-1] DefaultGoPublisher:88 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/4/python-api/1/deploy-api/66]
+2024-03-12 19:26:29,051 INFO  [scheduler-1] CommandLine:371 - Running command: python3 main.py
+2024-03-12 19:26:29,056 ERROR [scheduler-1] ProcessManager:100 - [Command Line] Failed executing ["python3 main.py"]
+2024-03-12 19:26:29,056 ERROR [scheduler-1] ProcessManager:101 - [Command Line] Agent's Environment Variables: {PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, WRAPPER_PID=92, WRAPPER_WORKING_DIR=/go, AGENT_STARTUP_ARGS=-Xms128m -Xmx256m -Dgo.console.stdout=true  -Dgo.console.stdout=true , WRAPPER_JAVA_VERSION_MINOR=0, WRAPPER_OS=linux, WRAPPER_HOSTNAME=9c28b3f89be9, LANG=en_US.UTF-8, WRAPPER_BITS=64, WRAPPER_BIN_DIR=/go-agent/wrapper, WRAPPER_VERSION=3.5.41, WRAPPER_BASE_NAME=wrapper, WRAPPER_HOST_NAME=9c28b3f89be9, WRAPPER_CONF_DIR=/go-agent/wrapper-config, WRAPPER_LANG=en, WRAPPER_JAVA_VENDOR=OpenJDK, PWD=/go/src, WRAPPER_FILE_SEPARATOR=/, LANGUAGE=en_US:en, GOCD_AGENT_JVM_OPTS=, WRAPPER_INIT_DIR=/go/src, GO_SERVER_URL=http://gocdserver:8153/go, GO_JAVA_HOME=/gocd-jre, WRAPPER_PATH_SEPARATOR=:, GOPATH=/go, WRAPPER_EDITION=Standard, HOSTNAME=9c28b3f89be9, WRAPPER_JAVA_VERSION_MAJOR=13, LC_ALL=en_US.UTF-8, WRAPPER_JAVA_VERSION_REVISION=2, WRAPPER_RUN_MODE=console, WRAPPER_ARCH=x86, WRAPPER_JAVA_VERSION=13.0.2, HOME=/root, SHLVL=0}
+2024-03-12 19:26:29,056 WARN  [scheduler-1] CommandLine:48 - Error happened while attempting to execute 'python3 main.py'. 
+Please make sure [python3 main.py] can be executed on this agent.
+
+2024-03-12 19:26:29,056 WARN  [scheduler-1] CommandLine:48 - [Debug Information] Environment variable PATH: /go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-03-12 19:26:29,056 ERROR [scheduler-1] CommandLine:391 - [Command Line] Error happened while attempting to execute 'python3 main.py'. 
+Please make sure [python3 main.py] can be executed on this agent.
+. Path: /go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-03-12 19:26:29,056 WARN  [scheduler-1] BaseCommandBuilder:92 - exec error
+2024-03-12 19:26:29,057 WARN  [scheduler-1] BaseCommandBuilder:88 - Could not execute command: python3 main.py
+2024-03-12 19:26:29,060 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:29,060 INFO  [scheduler-1] DefaultGoPublisher:94 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Failed] to Go Server for Build [go-gocd-demo/4/python-api/1/deploy-api/66]
+2024-03-12 19:26:29,074 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:29,075 INFO  [scheduler-1] DefaultGoPublisher:88 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/4/python-api/1/deploy-api/66]
+2024-03-12 19:26:29,082 INFO  [scheduler-1] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 19:26:29,082 INFO  [scheduler-1] DefaultGoPublisher:100 - Agent [9c28b3f89be9, 172.31.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Failed] to Go Server for Build [go-gocd-demo/4/python-api/1/deploy-api/66]
+2024-03-12 19:26:29,087 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:26:29,106 INFO  [scheduler-1] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/4/python-api/1/deploy-api/66]
+2024-03-12 19:31:02,668 INFO  [main] ClassPathXmlApplicationContext:583 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f058f00: startup date [Tue Mar 12 19:31:02 GMT 2024]; root of context hierarchy
+2024-03-12 19:31:02,692 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2024-03-12 19:31:02,778 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext-plugin-infra.xml]
+2024-03-12 19:31:02,896 INFO  [main] DefaultListableBeanFactory:821 - Overriding bean definition for bean 'pluginLoader' with a different definition: replacing [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:onejar:lib/go-plugin-infra-20.4.0-11749.jar!/com/thoughtworks/go/plugin/infra/PluginLoader.class]] with [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-plugin-infra.xml]]
+2024-03-12 19:31:02,988 INFO  [main] AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2024-03-12 19:31:03,420 INFO  [main] AgentStatusHttpd:90 - Agent status HTTP API server running on http://localhost:8152.
+2024-03-12 19:31:03,482 INFO  [main] ThreadPoolTaskScheduler:166 - Initializing ExecutorService 'scheduler'
+2024-03-12 19:31:03,630 INFO  [main] DefaultPluginJarChangeListener:67 - Plugin load starting: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:31:03,705 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:31:04,521 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
+2024-03-12 19:31:04,573 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: ddad6d25-46a0-4525-89a3-8d950cbcfe86
+2024-03-12 19:45:55,218 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:45:55,219 INFO  [scheduler-1] DefaultGoPublisher:88 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/5/test/1/run-test/97]
+2024-03-12 19:45:56,428 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:45:56,429 INFO  [scheduler-1] DefaultGoPublisher:88 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/5/test/1/run-test/97]
+2024-03-12 19:45:56,442 INFO  [scheduler-1] CommandLine:371 - Running command: go test
+2024-03-12 19:45:56,682 INFO  [Thread-32] CommandLine:51 - PASS
+2024-03-12 19:45:56,683 INFO  [Thread-32] CommandLine:51 - ok  	_/godata/pipelines/go-gocd-demo	0.002s
+2024-03-12 19:45:56,691 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:45:56,692 INFO  [scheduler-1] DefaultGoPublisher:94 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/5/test/1/run-test/97]
+2024-03-12 19:45:56,710 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:45:56,710 INFO  [scheduler-1] DefaultGoPublisher:88 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/5/test/1/run-test/97]
+2024-03-12 19:45:56,721 INFO  [scheduler-1] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 19:45:56,722 INFO  [scheduler-1] DefaultGoPublisher:100 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/5/test/1/run-test/97]
+2024-03-12 19:45:56,730 INFO  [scheduler-1] HttpService:125 - Got back 200 from server
+2024-03-12 19:45:56,758 INFO  [scheduler-1] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/5/test/1/run-test/97]
+2024-03-12 19:46:16,777 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:46:16,778 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/5/python-api/1/deploy-api/98]
+2024-03-12 19:46:17,545 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:46:17,545 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/5/python-api/1/deploy-api/98]
+2024-03-12 19:46:17,551 INFO  [scheduler-3] CommandLine:371 - Running command: python3 main.py
+2024-03-12 19:46:17,553 ERROR [scheduler-3] ProcessManager:100 - [Command Line] Failed executing ["python3 main.py"]
+2024-03-12 19:46:17,554 ERROR [scheduler-3] ProcessManager:101 - [Command Line] Agent's Environment Variables: {PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, WRAPPER_PID=92, WRAPPER_WORKING_DIR=/go, AGENT_STARTUP_ARGS=-Xms128m -Xmx256m -Dgo.console.stdout=true  -Dgo.console.stdout=true , WRAPPER_JAVA_VERSION_MINOR=0, WRAPPER_OS=linux, WRAPPER_HOSTNAME=ea082575bdb3, LANG=en_US.UTF-8, WRAPPER_BITS=64, WRAPPER_BIN_DIR=/go-agent/wrapper, WRAPPER_VERSION=3.5.41, WRAPPER_BASE_NAME=wrapper, WRAPPER_HOST_NAME=ea082575bdb3, WRAPPER_CONF_DIR=/go-agent/wrapper-config, WRAPPER_LANG=en, WRAPPER_JAVA_VENDOR=OpenJDK, PWD=/go/src, WRAPPER_FILE_SEPARATOR=/, LANGUAGE=en_US:en, GOCD_AGENT_JVM_OPTS=, WRAPPER_INIT_DIR=/go/src, GO_SERVER_URL=http://gocdserver:8153/go, GO_JAVA_HOME=/gocd-jre, WRAPPER_PATH_SEPARATOR=:, GOPATH=/go, WRAPPER_EDITION=Standard, HOSTNAME=ea082575bdb3, WRAPPER_JAVA_VERSION_MAJOR=13, LC_ALL=en_US.UTF-8, WRAPPER_JAVA_VERSION_REVISION=2, WRAPPER_RUN_MODE=console, WRAPPER_ARCH=x86, WRAPPER_JAVA_VERSION=13.0.2, HOME=/root, SHLVL=0}
+2024-03-12 19:46:17,554 WARN  [scheduler-3] CommandLine:48 - Error happened while attempting to execute 'python3 main.py'. 
+Please make sure [python3 main.py] can be executed on this agent.
+
+2024-03-12 19:46:17,554 WARN  [scheduler-3] CommandLine:48 - [Debug Information] Environment variable PATH: /go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-03-12 19:46:17,555 ERROR [scheduler-3] CommandLine:391 - [Command Line] Error happened while attempting to execute 'python3 main.py'. 
+Please make sure [python3 main.py] can be executed on this agent.
+. Path: /go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-03-12 19:46:17,555 WARN  [scheduler-3] BaseCommandBuilder:92 - exec error
+2024-03-12 19:46:17,555 WARN  [scheduler-3] BaseCommandBuilder:88 - Could not execute command: python3 main.py
+2024-03-12 19:46:17,560 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:46:17,560 INFO  [scheduler-3] DefaultGoPublisher:94 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Failed] to Go Server for Build [go-gocd-demo/5/python-api/1/deploy-api/98]
+2024-03-12 19:46:17,576 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:46:17,577 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/5/python-api/1/deploy-api/98]
+2024-03-12 19:46:17,583 INFO  [scheduler-3] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 19:46:17,584 INFO  [scheduler-3] DefaultGoPublisher:100 - Agent [ea082575bdb3, 192.168.0.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Failed] to Go Server for Build [go-gocd-demo/5/python-api/1/deploy-api/98]
+2024-03-12 19:46:17,590 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:46:17,635 INFO  [scheduler-3] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/5/python-api/1/deploy-api/98]
+2024-03-12 19:55:50,941 INFO  [main] ClassPathXmlApplicationContext:583 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f058f00: startup date [Tue Mar 12 19:55:50 GMT 2024]; root of context hierarchy
+2024-03-12 19:55:50,968 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2024-03-12 19:55:51,080 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext-plugin-infra.xml]
+2024-03-12 19:55:51,194 INFO  [main] DefaultListableBeanFactory:821 - Overriding bean definition for bean 'pluginLoader' with a different definition: replacing [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:onejar:lib/go-plugin-infra-20.4.0-11749.jar!/com/thoughtworks/go/plugin/infra/PluginLoader.class]] with [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-plugin-infra.xml]]
+2024-03-12 19:55:51,294 INFO  [main] AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2024-03-12 19:55:51,765 INFO  [main] AgentStatusHttpd:90 - Agent status HTTP API server running on http://localhost:8152.
+2024-03-12 19:55:51,835 INFO  [main] ThreadPoolTaskScheduler:166 - Initializing ExecutorService 'scheduler'
+2024-03-12 19:55:51,995 INFO  [main] DefaultPluginJarChangeListener:67 - Plugin load starting: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:55:52,073 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 19:55:52,875 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
+2024-03-12 19:55:52,922 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: 78968fb8-04ab-48bf-90ca-a5b0415bff70
+2024-03-12 19:56:13,032 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:13,033 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/6/test/1/run-test/129]
+2024-03-12 19:56:14,141 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:14,142 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/6/test/1/run-test/129]
+2024-03-12 19:56:14,155 INFO  [scheduler-3] CommandLine:371 - Running command: go test
+2024-03-12 19:56:14,478 INFO  [Thread-32] CommandLine:51 - PASS
+2024-03-12 19:56:14,479 INFO  [Thread-32] CommandLine:51 - ok  	_/godata/pipelines/go-gocd-demo	0.003s
+2024-03-12 19:56:14,493 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:14,494 INFO  [scheduler-3] DefaultGoPublisher:94 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/6/test/1/run-test/129]
+2024-03-12 19:56:14,523 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:14,523 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/6/test/1/run-test/129]
+2024-03-12 19:56:14,535 INFO  [scheduler-3] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 19:56:14,536 INFO  [scheduler-3] DefaultGoPublisher:100 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/6/test/1/run-test/129]
+2024-03-12 19:56:14,543 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:14,592 INFO  [scheduler-3] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/6/test/1/run-test/129]
+2024-03-12 19:56:34,621 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:34,621 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/6/python-api/1/deploy-api/130]
+2024-03-12 19:56:35,113 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:35,113 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/6/python-api/1/deploy-api/130]
+2024-03-12 19:56:35,121 INFO  [scheduler-3] CommandLine:371 - Running command: python3.8 main.py
+2024-03-12 19:56:35,122 ERROR [scheduler-3] ProcessManager:100 - [Command Line] Failed executing ["python3.8 main.py"]
+2024-03-12 19:56:35,123 ERROR [scheduler-3] ProcessManager:101 - [Command Line] Agent's Environment Variables: {PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, WRAPPER_PID=92, WRAPPER_WORKING_DIR=/go, AGENT_STARTUP_ARGS=-Xms128m -Xmx256m -Dgo.console.stdout=true  -Dgo.console.stdout=true , WRAPPER_JAVA_VERSION_MINOR=0, WRAPPER_OS=linux, WRAPPER_HOSTNAME=b9ccfb781d8c, LANG=en_US.UTF-8, WRAPPER_BITS=64, WRAPPER_BIN_DIR=/go-agent/wrapper, WRAPPER_VERSION=3.5.41, WRAPPER_BASE_NAME=wrapper, WRAPPER_HOST_NAME=b9ccfb781d8c, WRAPPER_CONF_DIR=/go-agent/wrapper-config, WRAPPER_LANG=en, WRAPPER_JAVA_VENDOR=OpenJDK, PWD=/go/src, WRAPPER_FILE_SEPARATOR=/, LANGUAGE=en_US:en, GOCD_AGENT_JVM_OPTS=, WRAPPER_INIT_DIR=/go/src, GO_SERVER_URL=http://gocdserver:8153/go, GO_JAVA_HOME=/gocd-jre, WRAPPER_PATH_SEPARATOR=:, GOPATH=/go, WRAPPER_EDITION=Standard, HOSTNAME=b9ccfb781d8c, WRAPPER_JAVA_VERSION_MAJOR=13, LC_ALL=en_US.UTF-8, WRAPPER_JAVA_VERSION_REVISION=2, WRAPPER_RUN_MODE=console, WRAPPER_ARCH=x86, WRAPPER_JAVA_VERSION=13.0.2, HOME=/root, SHLVL=0}
+2024-03-12 19:56:35,123 WARN  [scheduler-3] CommandLine:48 - Error happened while attempting to execute 'python3.8 main.py'. 
+Please make sure [python3.8 main.py] can be executed on this agent.
+
+2024-03-12 19:56:35,123 WARN  [scheduler-3] CommandLine:48 - [Debug Information] Environment variable PATH: /go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-03-12 19:56:35,123 ERROR [scheduler-3] CommandLine:391 - [Command Line] Error happened while attempting to execute 'python3.8 main.py'. 
+Please make sure [python3.8 main.py] can be executed on this agent.
+. Path: /go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2024-03-12 19:56:35,123 WARN  [scheduler-3] BaseCommandBuilder:92 - exec error
+2024-03-12 19:56:35,124 WARN  [scheduler-3] BaseCommandBuilder:88 - Could not execute command: python3.8 main.py
+2024-03-12 19:56:35,129 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:35,129 INFO  [scheduler-3] DefaultGoPublisher:94 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Failed] to Go Server for Build [go-gocd-demo/6/python-api/1/deploy-api/130]
+2024-03-12 19:56:35,146 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:35,146 INFO  [scheduler-3] DefaultGoPublisher:88 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/6/python-api/1/deploy-api/130]
+2024-03-12 19:56:35,151 INFO  [scheduler-3] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 19:56:35,151 INFO  [scheduler-3] DefaultGoPublisher:100 - Agent [b9ccfb781d8c, 192.168.16.3, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Failed] to Go Server for Build [go-gocd-demo/6/python-api/1/deploy-api/130]
+2024-03-12 19:56:35,155 INFO  [scheduler-3] HttpService:125 - Got back 200 from server
+2024-03-12 19:56:35,182 INFO  [scheduler-3] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/6/python-api/1/deploy-api/130]
