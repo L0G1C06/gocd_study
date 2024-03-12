@@ -6,6 +6,10 @@ services:
     ports:
       - "8153:8153"
       - "8154:8154"
+    volumes:
+      - "./server/data:/godata"
   gocdagent:
     build: ./agent
     image: "l0g1g06/gocdagent1"
+    volumes:
+      - "./agent/data:/godata"

@@ -6,5 +6,4 @@ RUN apt-get update && \
     apt-get clean
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:$PATH
-USER go
 WORKDIR $GOPATH/src

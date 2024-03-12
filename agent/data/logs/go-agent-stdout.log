@@ -1,0 +1,78 @@
+2024-03-12 18:47:14,148 - 2024-03-12 18:47:14,146 INFO  [main] ClassPathXmlApplicationContext:583 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f058f00: startup date [Tue Mar 12 18:47:14 GMT 2024]; root of context hierarchy
+2024-03-12 18:47:14,174 - 2024-03-12 18:47:14,174 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2024-03-12 18:47:14,303 - 2024-03-12 18:47:14,302 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext-plugin-infra.xml]
+2024-03-12 18:47:14,407 - 2024-03-12 18:47:14,407 INFO  [main] DefaultListableBeanFactory:821 - Overriding bean definition for bean 'pluginLoader' with a different definition: replacing [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:onejar:lib/go-plugin-infra-20.4.0-11749.jar!/com/thoughtworks/go/plugin/infra/PluginLoader.class]] with [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-plugin-infra.xml]]
+2024-03-12 18:47:14,508 - 2024-03-12 18:47:14,507 INFO  [main] AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2024-03-12 18:47:15,150 - 2024-03-12 18:47:15,147 INFO  [main] AgentStatusHttpd:90 - Agent status HTTP API server running on http://localhost:8152.
+2024-03-12 18:47:15,207 - 2024-03-12 18:47:15,206 INFO  [main] ThreadPoolTaskScheduler:166 - Initializing ExecutorService 'scheduler'
+2024-03-12 18:47:15,363 - 2024-03-12 18:47:15,362 INFO  [main] DefaultPluginJarChangeListener:67 - Plugin load starting: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 18:47:15,445 - 2024-03-12 18:47:15,445 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 18:47:16,252 - 2024-03-12 18:47:16,252 INFO  [scheduler-1] SslInfrastructureService:78 - [Agent Registration] Starting to register agent.
+2024-03-12 18:47:16,252 - 2024-03-12 18:47:16,252 INFO  [scheduler-1] SslInfrastructureService:88 - [Agent Registration] Fetching token from server.
+2024-03-12 18:47:16,278 - 2024-03-12 18:47:16,278 INFO  [scheduler-1] TokenRequester:56 - The server has generated token for the agent.
+2024-03-12 18:47:16,279 - 2024-03-12 18:47:16,278 INFO  [scheduler-1] SslInfrastructureService:91 - [Agent Registration] Got a token from server.
+2024-03-12 18:47:16,739 - 2024-03-12 18:47:16,739 ERROR [scheduler-2] AgentHTTPClientController:103 - Error occurred when agent tried to ping server: 
+2024-03-12 18:47:16,739 - org.springframework.remoting.RemoteAccessException: Could not access HTTP invoker remote service at [http://gocdserver:8153/go/remoting/remoteBuildRepository]; nested exception is org.apache.http.client.ClientProtocolException: The server returned status code 403. Possible reasons include:
+2024-03-12 18:47:16,739 -    - This agent has been deleted from the configuration
+2024-03-12 18:47:16,739 -    - This agent is pending approval
+2024-03-12 18:47:16,739 -    - There is possibly a reverse proxy (or load balancer) that has been misconfigured. See https://docs.gocd.org/20.4.0/installation/configure-reverse-proxy.html#agents-and-reverse-proxies for details.
+2024-03-12 18:47:16,739 - 	at org.springframework.remoting.httpinvoker.HttpInvokerClientInterceptor.convertHttpInvokerAccessException(HttpInvokerClientInterceptor.java:226)
+2024-03-12 18:47:16,739 - 	at org.springframework.remoting.httpinvoker.HttpInvokerClientInterceptor.invoke(HttpInvokerClientInterceptor.java:153)
+2024-03-12 18:47:16,739 - 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+2024-03-12 18:47:16,739 - 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+2024-03-12 18:47:16,739 - 	at com.sun.proxy.$Proxy10.ping(Unknown Source)
+2024-03-12 18:47:16,740 - 	at com.thoughtworks.go.agent.AgentHTTPClientController.ping(AgentHTTPClientController.java:98)
+2024-03-12 18:47:16,740 - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2024-03-12 18:47:16,740 - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+2024-03-12 18:47:16,740 - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2024-03-12 18:47:16,740 - 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+2024-03-12 18:47:16,740 - 	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+2024-03-12 18:47:16,740 - 	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+2024-03-12 18:47:16,740 - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+2024-03-12 18:47:16,740 - 	at java.base/java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+2024-03-12 18:47:16,740 - 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+2024-03-12 18:47:16,740 - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+2024-03-12 18:47:16,740 - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+2024-03-12 18:47:16,740 - 	at java.base/java.lang.Thread.run(Unknown Source)
+2024-03-12 18:47:16,740 - Caused by: org.apache.http.client.ClientProtocolException: The server returned status code 403. Possible reasons include:
+2024-03-12 18:47:16,740 -    - This agent has been deleted from the configuration
+2024-03-12 18:47:16,740 -    - This agent is pending approval
+2024-03-12 18:47:16,740 -    - There is possibly a reverse proxy (or load balancer) that has been misconfigured. See https://docs.gocd.org/20.4.0/installation/configure-reverse-proxy.html#agents-and-reverse-proxies for details.
+2024-03-12 18:47:16,740 - 	at com.thoughtworks.go.agent.GoHttpClientHttpInvokerRequestExecutor.validateResponse(GoHttpClientHttpInvokerRequestExecutor.java:100)
+2024-03-12 18:47:16,740 - 	at com.thoughtworks.go.agent.GoHttpClientHttpInvokerRequestExecutor.doExecuteRequest(GoHttpClientHttpInvokerRequestExecutor.java:66)
+2024-03-12 18:47:16,740 - 	at org.springframework.remoting.httpinvoker.AbstractHttpInvokerRequestExecutor.executeRequest(AbstractHttpInvokerRequestExecutor.java:137)
+2024-03-12 18:47:16,740 - 	at org.springframework.remoting.httpinvoker.HttpInvokerClientInterceptor.executeRequest(HttpInvokerClientInterceptor.java:202)
+2024-03-12 18:47:16,740 - 	at org.springframework.remoting.httpinvoker.HttpInvokerClientInterceptor.executeRequest(HttpInvokerClientInterceptor.java:184)
+2024-03-12 18:47:16,740 - 	at org.springframework.remoting.httpinvoker.HttpInvokerClientInterceptor.invoke(HttpInvokerClientInterceptor.java:150)
+2024-03-12 18:47:16,740 - 	... 16 common frames omitted
+2024-03-12 18:47:21,293 - 2024-03-12 18:47:21,293 INFO  [scheduler-1] SslInfrastructureService:170 - This agent is now approved by the server.
+2024-03-12 18:47:21,294 - 2024-03-12 18:47:21,293 INFO  [scheduler-1] SslInfrastructureService:119 - [Agent Registration] Retrieved registration from Go server.
+2024-03-12 18:47:21,315 - 2024-03-12 18:47:21,315 INFO  [scheduler-1] SslInfrastructureService:81 - [Agent Registration] Successfully registered agent.
+2024-03-12 18:47:21,316 - 2024-03-12 18:47:21,315 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
+2024-03-12 18:47:21,337 - 2024-03-12 18:47:21,336 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: 396549e2-64ba-4822-976d-f1338a733ef3
+2024-03-12 18:48:21,456 - 2024-03-12 18:48:21,456 INFO  [scheduler-2] HttpService:125 - Got back 200 from server
+2024-03-12 18:48:21,457 - 2024-03-12 18:48:21,457 INFO  [scheduler-2] DefaultGoPublisher:88 - Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Preparing] to Go Server for Build [go-gocd-demo/1/test/1/run-test/1]
+2024-03-12 18:48:25,907 - 2024-03-12 18:48:25,906 INFO  [scheduler-2] HttpService:125 - Got back 200 from server
+2024-03-12 18:48:25,907 - 2024-03-12 18:48:25,907 INFO  [scheduler-2] DefaultGoPublisher:88 - Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Building] to Go Server for Build [go-gocd-demo/1/test/1/run-test/1]
+2024-03-12 18:48:25,916 - 2024-03-12 18:48:25,916 INFO  [scheduler-2] CommandLine:371 - Running command: go test
+2024-03-12 18:48:26,156 - 2024-03-12 18:48:26,156 INFO  [Thread-30] CommandLine:51 - PASS
+2024-03-12 18:48:26,157 - 2024-03-12 18:48:26,156 INFO  [Thread-30] CommandLine:51 - ok  	_/godata/pipelines/go-gocd-demo	0.002s
+2024-03-12 18:48:26,164 - 2024-03-12 18:48:26,164 INFO  [scheduler-2] HttpService:125 - Got back 200 from server
+2024-03-12 18:48:26,165 - 2024-03-12 18:48:26,165 INFO  [scheduler-2] DefaultGoPublisher:94 - Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/1/test/1/run-test/1]
+2024-03-12 18:48:26,179 - 2024-03-12 18:48:26,178 INFO  [scheduler-2] HttpService:125 - Got back 200 from server
+2024-03-12 18:48:26,179 - 2024-03-12 18:48:26,179 INFO  [scheduler-2] DefaultGoPublisher:88 - Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting status [Completing] to Go Server for Build [go-gocd-demo/1/test/1/run-test/1]
+2024-03-12 18:48:26,186 - 2024-03-12 18:48:26,186 INFO  [scheduler-2] ArtifactsPublisher:68 - Pluggable metadata folder is empty.
+2024-03-12 18:48:26,186 - 2024-03-12 18:48:26,186 INFO  [scheduler-2] DefaultGoPublisher:100 - Agent [8e37088f9e8b, 172.28.0.2, 52767143-766f-4884-8519-3cb5718ed975] is reporting build result [Passed] to Go Server for Build [go-gocd-demo/1/test/1/run-test/1]
+2024-03-12 18:48:26,191 - 2024-03-12 18:48:26,191 INFO  [scheduler-2] HttpService:125 - Got back 200 from server
+2024-03-12 18:48:26,217 - 2024-03-12 18:48:26,217 INFO  [scheduler-2] DefaultGoPublisher:82 - Stopping Transmission for Build [go-gocd-demo/1/test/1/run-test/1]
+2024-03-12 18:52:13,081 - 2024-03-12 18:52:13,079 INFO  [main] ClassPathXmlApplicationContext:583 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f058f00: startup date [Tue Mar 12 18:52:13 GMT 2024]; root of context hierarchy
+2024-03-12 18:52:13,106 - 2024-03-12 18:52:13,105 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2024-03-12 18:52:13,175 - 2024-03-12 18:52:13,174 INFO  [main] XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext-plugin-infra.xml]
+2024-03-12 18:52:13,264 - 2024-03-12 18:52:13,264 INFO  [main] DefaultListableBeanFactory:821 - Overriding bean definition for bean 'pluginLoader' with a different definition: replacing [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [jar:onejar:lib/go-plugin-infra-20.4.0-11749.jar!/com/thoughtworks/go/plugin/infra/PluginLoader.class]] with [Generic bean: class [com.thoughtworks.go.plugin.infra.PluginLoader]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [applicationContext-plugin-infra.xml]]
+2024-03-12 18:52:13,347 - 2024-03-12 18:52:13,347 INFO  [main] AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2024-03-12 18:52:13,744 - 2024-03-12 18:52:13,743 INFO  [main] AgentStatusHttpd:90 - Agent status HTTP API server running on http://localhost:8152.
+2024-03-12 18:52:13,792 - 2024-03-12 18:52:13,792 INFO  [main] ThreadPoolTaskScheduler:166 - Initializing ExecutorService 'scheduler'
+2024-03-12 18:52:13,931 - 2024-03-12 18:52:13,931 INFO  [main] DefaultPluginJarChangeListener:67 - Plugin load starting: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 18:52:14,013 - 2024-03-12 18:52:14,013 INFO  [main] DefaultPluginJarChangeListener:74 - Plugin load finished: /go/plugins/bundled/gocd-yum-repository-poller-plugin.jar
+2024-03-12 18:52:14,832 - 2024-03-12 18:52:14,831 INFO  [scheduler-1] AgentHTTPClientController:128 - About to get cookie from the server.
+2024-03-12 18:52:14,869 - 2024-03-12 18:52:14,869 INFO  [scheduler-1] AgentHTTPClientController:131 - Got cookie: 7aeae54a-46fd-4a50-a54f-e3bc4126f54f

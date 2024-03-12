@@ -1,0 +1,43 @@
+##|18:48:21.448 [go] Job Started: 2024-03-12 18:48:21 GMT
+##|18:48:21.448 
+pr|18:48:21.449 [go] Start to prepare go-gocd-demo/1/test/1/run-test on 8e37088f9e8b [/go]
+pr|18:48:21.468 [go] Start to update materials.
+pr|18:48:21.468 
+pr|18:48:21.470 [go] Start updating files at revision 12a74aeee05ee757e1dda963e0f1102401da7a8e from https://github.com/L0G1C06/gocd_study
+pe|18:48:21.477 STDERR: Cloning into '/go/pipelines/go-gocd-demo'...
+pr|18:48:24.642 [GIT] Fetching changes
+pr|18:48:25.345 [GIT] Performing git gc
+pr|18:48:25.447 [GIT] Reset working directory pipelines/go-gocd-demo
+pr|18:48:25.447 [GIT] Cleaning all unversioned files in working copy
+pr|18:48:25.565 [GIT] Cleaning submodule configurations in .git/config
+pr|18:48:25.566 [GIT] Updating working copy to revision 12a74aeee05ee757e1dda963e0f1102401da7a8e
+pr|18:48:25.568 HEAD is now at 12a74ae return to correct test case
+pr|18:48:25.669 [GIT] Removing modified files in submodules
+pr|18:48:25.882 [GIT] Cleaning all unversioned files in working copy
+pr|18:48:25.896 [go] Done.
+pr|18:48:25.896 
+pr|18:48:25.897 [go] overriding environment variable 'GO_SERVER_URL' with value 'http://gocdserver:8153/go'
+pr|18:48:25.897 [go] setting environment variable 'GO_PIPELINE_GROUP_NAME' to value 'defaultGroup'
+pr|18:48:25.897 [go] setting environment variable 'GO_TRIGGER_USER' to value 'anonymous'
+pr|18:48:25.897 [go] setting environment variable 'GO_PIPELINE_NAME' to value 'go-gocd-demo'
+pr|18:48:25.897 [go] setting environment variable 'GO_PIPELINE_COUNTER' to value '1'
+pr|18:48:25.897 [go] setting environment variable 'GO_PIPELINE_LABEL' to value '1'
+pr|18:48:25.897 [go] setting environment variable 'GO_STAGE_NAME' to value 'test'
+pr|18:48:25.897 [go] setting environment variable 'GO_STAGE_COUNTER' to value '1'
+pr|18:48:25.897 [go] setting environment variable 'GO_JOB_NAME' to value 'run-test'
+pr|18:48:25.898 [go] setting environment variable 'GO_REVISION' to value '12a74aeee05ee757e1dda963e0f1102401da7a8e'
+pr|18:48:25.898 [go] setting environment variable 'GO_TO_REVISION' to value '12a74aeee05ee757e1dda963e0f1102401da7a8e'
+pr|18:48:25.898 [go] setting environment variable 'GO_FROM_REVISION' to value '12a74aeee05ee757e1dda963e0f1102401da7a8e'
+pr|18:48:25.898 [go] setting environment variable 'GO_MATERIAL_URL' to value 'https://github.com/L0G1C06/gocd_study'
+pr|18:48:25.898 [go] setting environment variable 'GO_MATERIAL_BRANCH' to value 'main'
+pr|18:48:25.898 [go] setting environment variable 'GO_MATERIAL_HAS_CHANGED' to value 'true'
+pr|18:48:25.898 
+##|18:48:25.902 [go] Start to build go-gocd-demo/1/test/1/run-test on 8e37088f9e8b [/go]
+!!|18:48:25.914 [go] Task: go test
+&1|18:48:26.156 PASS
+&1|18:48:26.156 ok  	_/godata/pipelines/go-gocd-demo	0.002s
+?0|18:48:26.160 [go] Task status: passed (245 ms)
+j0|18:48:26.174 [go] Current job status: passed
+##|18:48:26.184 [go] Start to create properties go-gocd-demo/1/test/1/run-test on 8e37088f9e8b [/go]
+ar|18:48:26.184 [go] Start to upload go-gocd-demo/1/test/1/run-test on 8e37088f9e8b [/go]
+ex|18:48:26.186 [go] Job completed go-gocd-demo/1/test/1/run-test on 8e37088f9e8b [/go]

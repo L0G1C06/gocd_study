@@ -1,0 +1,26 @@
+2024-03-12 18:47:13,770 - [Tue Mar 12 18:47:13 GMT 2024] Starting process: 
+2024-03-12 18:47:13,771 - [Tue Mar 12 18:47:13 GMT 2024]   Working directory    : /go
+2024-03-12 18:47:13,771 - [Tue Mar 12 18:47:13 GMT 2024]   Application arguments: [-serverUrl, http://gocdserver:8153/go, -sslVerificationMode, FULL]
+2024-03-12 18:47:13,771 - [Tue Mar 12 18:47:13 GMT 2024]            GoCD Version: 20.4.0-11749
+2024-03-12 18:47:13,771 - [Tue Mar 12 18:47:13 GMT 2024]            Java Version: 13.0.2
+2024-03-12 18:47:13,771 - [Tue Mar 12 18:47:13 GMT 2024]        Operating System: Linux(6.1.0-1034-oem)
+2024-03-12 18:47:14,028 - Could not find file `config/agent-logback.xml'. Attempting to load from classpath.
+2024-03-12 18:47:14,029 - Using classpath resource `jar:onejar:lib/agent-20.4.0-11749-classes.jar!/config/agent-logback.xml'.
+2024-03-12 18:47:14,939 - WARNING: An illegal reflective access operation has occurred
+2024-03-12 18:47:14,939 - WARNING: Illegal reflective access by org.bouncycastle.jcajce.provider.drbg.DRBG (onejar:lib/bcprov-jdk15on-1.59.jar) to constructor sun.security.provider.Sun()
+2024-03-12 18:47:14,939 - WARNING: Please consider reporting this to the maintainers of org.bouncycastle.jcajce.provider.drbg.DRBG
+2024-03-12 18:47:14,939 - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+2024-03-12 18:47:14,939 - WARNING: All illegal access operations will be denied in a future release
+2024-03-12 18:52:12,755 - [Tue Mar 12 18:52:12 GMT 2024] Starting process: 
+2024-03-12 18:52:12,755 - [Tue Mar 12 18:52:12 GMT 2024]   Working directory    : /go
+2024-03-12 18:52:12,755 - [Tue Mar 12 18:52:12 GMT 2024]   Application arguments: [-serverUrl, http://gocdserver:8153/go, -sslVerificationMode, FULL]
+2024-03-12 18:52:12,755 - [Tue Mar 12 18:52:12 GMT 2024]            GoCD Version: 20.4.0-11749
+2024-03-12 18:52:12,755 - [Tue Mar 12 18:52:12 GMT 2024]            Java Version: 13.0.2
+2024-03-12 18:52:12,755 - [Tue Mar 12 18:52:12 GMT 2024]        Operating System: Linux(6.1.0-1034-oem)
+2024-03-12 18:52:13,015 - Could not find file `config/agent-logback.xml'. Attempting to load from classpath.
+2024-03-12 18:52:13,016 - Using classpath resource `jar:onejar:lib/agent-20.4.0-11749-classes.jar!/config/agent-logback.xml'.
+2024-03-12 18:52:13,581 - WARNING: An illegal reflective access operation has occurred
+2024-03-12 18:52:13,581 - WARNING: Illegal reflective access by org.bouncycastle.jcajce.provider.drbg.DRBG (onejar:lib/bcprov-jdk15on-1.59.jar) to constructor sun.security.provider.Sun()
+2024-03-12 18:52:13,581 - WARNING: Please consider reporting this to the maintainers of org.bouncycastle.jcajce.provider.drbg.DRBG
+2024-03-12 18:52:13,581 - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+2024-03-12 18:52:13,581 - WARNING: All illegal access operations will be denied in a future release
