@@ -5,6 +5,7 @@ services:
     image: "l0g1g06/gocdserver"
     ports:
       - "8153:8153"
+      - "8154:8154"
   gocdagent:
     build: ./agent
     image: "l0g1g06/gocdagent1"
